@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour {
 
     private Animator myAnim;
 
+    public Vector3 respawnPoint;
+
 
 
 	// Use this for initialization
 	void Start () {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
+        respawnPoint = transform.position;
 
 	}
 	
@@ -58,4 +61,20 @@ public class PlayerController : MonoBehaviour {
 
 
     }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "KillPlane")
+        {
+            transform.position = respawnPoint;
+        }
+
+        if(other.tag == "checkPoint")
+        {
+            respawnPoint = other.transform.position;
+        }
+    }
+
+
 }
