@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
     private Animator myAnim;
 
     public Vector3 respawnPoint;
+    public LevelManager lvlManager;
 
 
 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
         respawnPoint = transform.position;
+        lvlManager = FindObjectOfType<LevelManager>();
 
 	}
 	
@@ -67,7 +69,9 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.tag == "KillPlane")
         {
-            transform.position = respawnPoint;
+            //transform.position = respawnPoint;
+            lvlManager.respawn();
+
         }
 
         if(other.tag == "checkPoint")
