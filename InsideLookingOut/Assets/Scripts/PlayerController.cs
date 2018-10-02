@@ -40,12 +40,12 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetAxisRaw("Horizontal") > 0f)
         {
             myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(.5f, .5f, .5f);
 
         }else if (Input.GetAxisRaw("Horizontal") < 0f)
         {
             myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-.5f, .5f, .5f);
         }
         else
         {
