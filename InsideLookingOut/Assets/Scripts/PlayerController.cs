@@ -80,5 +80,20 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "movingPlatform")
+        {
+            transform.parent = other.transform;
+        }    
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "movingPlatform")
+        {
+            transform.parent = null;
+        }
+    }
 
 }
