@@ -155,6 +155,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isGrounded: 0
+  respawnPoint: {x: 0, y: 0, z: 0}
+  lvlManager: {fileID: 0}
 --- !u!212 &212660269724823180
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -187,8 +189,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1745619327
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300040, guid: 5453a30a7e623044eb680b30d62b50e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

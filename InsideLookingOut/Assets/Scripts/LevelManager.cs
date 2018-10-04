@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour {
 
     public GameObject deathParticle;
 
+    public int coins;
+
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<PlayerController>();
@@ -39,5 +41,10 @@ public class LevelManager : MonoBehaviour {
         player.gameObject.SetActive(true);
 
         yield return null;
+    }
+
+    public void addCoins(int amount)
+    {
+        coins += amount;
     }
 }
