@@ -11,15 +11,20 @@ public class LevelManager : MonoBehaviour {
     public GameObject deathParticle;
 
     public int coins;
+    public int health;
 
     public Text pointText;
+    public Text healthText;
 
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<PlayerController>();
 
         pointText.text = "Points: " + coins;
-	}
+        health = 100;
+        healthText.text = "Health: " + health;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
