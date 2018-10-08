@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 
     private SpriteRenderer sprRender;
     public Sprite trashcanSprite;
+    private Sprite playerSprite;
 
 
 
@@ -77,6 +78,8 @@ public class PlayerController : MonoBehaviour {
             if (transformed)
             {
                 transformed = false;
+                myAnim.Play("Player Idle");
+                moveSpeed = 3;
             }
             else
             {
