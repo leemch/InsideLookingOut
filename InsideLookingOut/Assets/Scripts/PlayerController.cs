@@ -21,6 +21,12 @@ public class PlayerController : MonoBehaviour {
     public Vector3 respawnPoint;
     public LevelManager lvlManager;
 
+    public bool canTransform;
+    public bool transformed;
+
+    private SpriteRenderer sprRender;
+    public Sprite trashcanSprite;
+
 
 
 	// Use this for initialization
@@ -29,8 +35,12 @@ public class PlayerController : MonoBehaviour {
         myAnim = GetComponent<Animator>();
         respawnPoint = transform.position;
         lvlManager = FindObjectOfType<LevelManager>();
+        transformed = false;
 
-	}
+        sprRender = GetComponent<SpriteRenderer>();
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -60,9 +70,27 @@ public class PlayerController : MonoBehaviour {
         myAnim.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
         myAnim.SetBool("Grounded", isGrounded);
 
+        if (Input.GetKeyDown("t"))
+        {
+            print("space key was pressed");
+
+            if (transformed)
+            {
+                transformed = false;
+            }
+            else
+            {
+                transformed = true;
+                moveSpeed = 0;
+                myAnim.Play("trashCan");
+                
+            }
+        }
+
 
 
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -70,6 +98,7 @@ public class PlayerController : MonoBehaviour {
         if (other.tag == "KillPlane")
         {
             //transform.position = respawnPoint;
+            
             lvlManager.respawn();
 
         }
