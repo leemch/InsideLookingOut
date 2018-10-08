@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
     public LevelManager lvlManager;
 
     public bool canTransform;
-    public bool transformed;
+    public bool isTransformed;
 
     private SpriteRenderer sprRender;
     public Sprite trashcanSprite;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour {
         myAnim = GetComponent<Animator>();
         respawnPoint = transform.position;
         lvlManager = FindObjectOfType<LevelManager>();
-        transformed = false;
+        isTransformed = false;
 
         sprRender = GetComponent<SpriteRenderer>();
 
@@ -75,15 +75,15 @@ public class PlayerController : MonoBehaviour {
         {
             print("space key was pressed");
 
-            if (transformed)
+            if (isTransformed)
             {
-                transformed = false;
+                isTransformed = false;
                 myAnim.Play("Player Idle");
                 moveSpeed = 3;
             }
             else
             {
-                transformed = true;
+                isTransformed = true;
                 moveSpeed = 0;
                 myAnim.Play("trashCan");
                 

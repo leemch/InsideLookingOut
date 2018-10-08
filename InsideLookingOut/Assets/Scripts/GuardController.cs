@@ -12,10 +12,18 @@ public class GuardController : MonoBehaviour {
 
     private Rigidbody2D myRigidBody;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject deathParticle;
+
+    private PlayerController player;
+
+    private LevelManager lvlManager;
+
+    // Use this for initialization
+    void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
-	}
+        player = FindObjectOfType<PlayerController>();
+        lvlManager = FindObjectOfType<LevelManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,6 +53,24 @@ public class GuardController : MonoBehaviour {
         if(other.tag == "KillPlane")
         {
             Destroy(gameObject);
+        }
+
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (player.isTransformed)
+            {
+                Instantiate(deathParticle, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+            else
+            {
+                lvlManager.respawn();
+            }
+
         }
     }
 }

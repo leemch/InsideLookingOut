@@ -4948,6 +4948,22 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61517372241446866, guid: 7534ae948831d4746a1348efc3201ab7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114037255314035212, guid: 7534ae948831d4746a1348efc3201ab7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210097365144682, guid: 7534ae948831d4746a1348efc3201ab7,
+        type: 2}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 1847031952115904, guid: fa0dc97c5b0c7df46888e6274a01bc9d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7534ae948831d4746a1348efc3201ab7, type: 2}
   m_IsPrefabAsset: 0
