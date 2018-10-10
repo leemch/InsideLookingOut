@@ -73,20 +73,24 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown("t"))
         {
+
             print("space key was pressed");
 
-            if (isTransformed)
+            if (canTransform)
             {
-                isTransformed = false;
-                myAnim.Play("Player Idle");
-                moveSpeed = 3;
-            }
-            else
-            {
-                isTransformed = true;
-                moveSpeed = 0;
-                myAnim.Play("trashCan");
-                
+                if (isTransformed)
+                {
+                    isTransformed = false;
+                    myAnim.Play("Player Idle");
+                    moveSpeed = 3;
+                }
+                else
+                {
+                    isTransformed = true;
+                    moveSpeed = 0;
+                    myAnim.Play("trashCan");
+
+                }
             }
         }
 
