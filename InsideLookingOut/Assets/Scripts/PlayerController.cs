@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
     private Rigidbody2D myRigidbody;
-
+    public GameObject transformParticle;
     public float jumpSpeed;
 
     public Transform groundCheck;
@@ -28,10 +28,12 @@ public class PlayerController : MonoBehaviour {
     public Sprite trashcanSprite;
     private Sprite playerSprite;
 
+    
 
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
         respawnPoint = transform.position;
@@ -86,6 +88,7 @@ public class PlayerController : MonoBehaviour {
                 }
                 else
                 {
+                    Instantiate(transformParticle, transform.position, transform.rotation);
                     isTransformed = true;
                     moveSpeed = 0;
                     myAnim.Play("trashCan");
