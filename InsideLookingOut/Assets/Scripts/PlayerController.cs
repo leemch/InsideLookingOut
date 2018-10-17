@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
     public GameObject transformParticle;
     public float jumpSpeed;
 
+
+
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
@@ -95,6 +97,25 @@ public class PlayerController : MonoBehaviour {
 
                 }
             }
+        }
+
+
+        if (Input.GetKeyDown("1"))
+        {
+
+                if (isTransformed)
+                {
+                //gameObject.SetActive(true);
+                    isTransformed = false;
+
+                }
+                else
+                {               
+                Instantiate(transformParticle, transform.position, transform.rotation);
+                gameObject.SetActive(false);
+                mousePlayer.SetActive(true);
+                isTransformed = true;
+                }      
         }
 
 

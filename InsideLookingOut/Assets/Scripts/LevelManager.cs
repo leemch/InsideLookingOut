@@ -20,8 +20,10 @@ public class LevelManager : MonoBehaviour {
     public int currentLives;
     public Text livesText;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject mousePlayer;
+
+    // Use this for initialization
+    void Start () {
         player = FindObjectOfType<PlayerController>();
 
         pointText.text = "Points: " + coins;
