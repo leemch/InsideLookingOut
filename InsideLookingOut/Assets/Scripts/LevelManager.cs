@@ -16,6 +16,10 @@ public class LevelManager : MonoBehaviour {
     public Text pointText;
     public Text healthText;
 
+    public int startingLives;
+    public int currentLives;
+    public Text livesText;
+
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<PlayerController>();
@@ -23,6 +27,9 @@ public class LevelManager : MonoBehaviour {
         pointText.text = "Points: " + coins;
         health = 100;
         healthText.text = "Health: " + health;
+
+        currentLives = startingLives;
+        livesText.text = "Lives x " + currentLives;
 
     }
 	
@@ -35,7 +42,17 @@ public class LevelManager : MonoBehaviour {
 
     public void respawn()
     {
-        StartCoroutine("RespawnCo");
+        currentLives -= 1;
+        livesText.text = "Lives x" + currentLives;
+
+        if (currentLives > 0)
+        {
+            StartCoroutine("RespawnCo");
+        }
+        else
+        {
+            player.gameObject.SetActive(false);
+        }
     }
 
 
