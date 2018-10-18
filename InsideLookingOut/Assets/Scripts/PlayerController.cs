@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour {
                 {               
                 Instantiate(transformParticle, transform.position, transform.rotation);
                 gameObject.SetActive(false);
-                mousePlayer.SetActive(true);
+                //mousePlayer.SetActive(true);
                 isTransformed = true;
                 }      
         }
