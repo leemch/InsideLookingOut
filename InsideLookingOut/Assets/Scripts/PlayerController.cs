@@ -50,17 +50,21 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
         if (Input.GetAxisRaw("Horizontal") > 0f)
         {
             myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
-            transform.localScale = new Vector3(.5f, .5f, .5f);
+            //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
-        }else if (Input.GetAxisRaw("Horizontal") < 0f)
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0f)
         {
             myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
-            transform.localScale = new Vector3(-.5f, .5f, .5f);
+            //if(transform.localScale.x > 0)
+            //transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
         else
         {

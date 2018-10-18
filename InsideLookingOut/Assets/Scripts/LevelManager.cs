@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour {
     public Text livesText;
 
     public GameObject mousePlayer;
+    public GameObject trashCanPlayer;
     public GameObject basePlayer;
 
     public GameObject currentPlayer;
@@ -48,12 +49,19 @@ public class LevelManager : MonoBehaviour {
 
         if (Input.GetKeyDown("1"))
         {
-            Instantiate(transformParticle, transform.position, transform.rotation);   
-            //mousePlayer.SetActive(true);
-            mousePlayer.transform.position = basePlayer.transform.position;
-            mousePlayer.SetActive(true);
-            cam.target = mousePlayer;
-            player.gameObject.SetActive(false);
+            Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
+            transformPlayer("base");
+        }
+
+        if (Input.GetKeyDown("2"))
+        {
+            Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
+            transformPlayer("mouse");
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
+            transformPlayer("trash can");
         }
 
     }
@@ -94,4 +102,30 @@ public class LevelManager : MonoBehaviour {
         coins += amount;
         pointText.text = "Points: " + coins;
     }
+
+    public void transformPlayer(string type)
+    {
+        
+
+        switch (type) {
+            case "base":
+                Instantiate(basePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                break;
+
+            case "trash can":
+                Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                break;
+
+            case "mouse":
+                Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                break;
+        }
+
+        Destroy(player.gameObject);
+
+        player = FindObjectOfType<PlayerController>();
+        cam.target = player.gameObject;
+    }
+
+
 }
