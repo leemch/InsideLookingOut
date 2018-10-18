@@ -100,23 +100,7 @@ public class PlayerController : MonoBehaviour {
         }
 
 
-        if (Input.GetKeyDown("1"))
-        {
 
-                if (isTransformed)
-                {
-                //gameObject.SetActive(true);
-                    isTransformed = false;
-
-                }
-                else
-                {               
-                Instantiate(transformParticle, transform.position, transform.rotation);
-                gameObject.SetActive(false);
-                //mousePlayer.SetActive(true);
-                isTransformed = true;
-                }      
-        }
 
 
 

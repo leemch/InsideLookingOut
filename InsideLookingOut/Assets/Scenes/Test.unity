@@ -1556,7 +1556,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 271513311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.17, z: 0}
+  m_LocalPosition: {x: 0, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1148826937}
@@ -5074,6 +5074,22 @@ Prefab:
       propertyPath: livesText
       value: 
       objectReference: {fileID: 1246424405}
+    - target: {fileID: 114454818325450374, guid: 0a7b60436de3a424193039bc676b7282,
+        type: 2}
+      propertyPath: mousePlayer
+      value: 
+      objectReference: {fileID: 1148826936}
+    - target: {fileID: 114454818325450374, guid: 0a7b60436de3a424193039bc676b7282,
+        type: 2}
+      propertyPath: transformParticle
+      value: 
+      objectReference: {fileID: 1847031952115904, guid: b84fcaff2bcc0444daeb0dcfa6ffadc8,
+        type: 2}
+    - target: {fileID: 114454818325450374, guid: 0a7b60436de3a424193039bc676b7282,
+        type: 2}
+      propertyPath: basePlayer
+      value: 
+      objectReference: {fileID: 1429924688}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a7b60436de3a424193039bc676b7282, type: 2}
   m_IsPrefabAsset: 0
@@ -7496,7 +7512,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148826936}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3b01744704541254c8f1e12b36038a46, type: 2}
   m_CullingMode: 0
@@ -7523,7 +7539,6 @@ MonoBehaviour:
   transformParticle: {fileID: 1847031952115904, guid: b84fcaff2bcc0444daeb0dcfa6ffadc8,
     type: 2}
   jumpSpeed: 5
-  mousePlayer: {fileID: 0}
   groundCheck: {fileID: 271513312}
   groundCheckRadius: 0.25
   whatIsGround:
@@ -10526,6 +10541,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1429924688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1753436909509212, guid: ef163195ca6468947b08c35aa0c612e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1444198233}
 --- !u!1 &1430704430
 GameObject:
   m_ObjectHideFlags: 0
@@ -11932,48 +11952,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7534ae948831d4746a1348efc3201ab7, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1680676251
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4162616509564052, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -41.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162616509564052, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.7871209
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162616509564052, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162616509564052, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162616509564052, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162616509564052, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162616509564052, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162616509564052, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
-      propertyPath: m_RootOrder
-      value: 24
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8d4c5b1c26304cf4a91ed42ea42f892e, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1683874946
 GameObject:
