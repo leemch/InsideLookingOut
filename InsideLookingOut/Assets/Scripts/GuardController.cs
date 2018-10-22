@@ -23,14 +23,21 @@ public class GuardController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
-        player = FindObjectOfType<PlayerController>();
         lvlManager = FindObjectOfType<LevelManager>();
+        player = FindObjectOfType<PlayerController>();
+        //player = lvlManager.player;
     }
 
     // Update is called once per frame
     void Update() {
 
-        if(Vector3.Distance(player.transform.position, transform.position) < 3f)
+
+        if(player == null)
+        {
+            player = FindObjectOfType<PlayerController>();
+        }
+
+        if(Vector3.Distance(player.transform.position, transform.position) < 3f && lvlManager.currentForm != transformation.trashCan)
         {
             moveSpeed = 2f;
             if (transform.position.x - player.transform.position.x > 0f)
@@ -89,12 +96,12 @@ public class GuardController : MonoBehaviour {
         if (movingRight)
         {
             myRigidBody.velocity = new Vector3(moveSpeed, myRigidBody.velocity.y, 0f);
-            transform.localScale = new Vector3(0.29173f, 0.29173f, 0.29173f);
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else
         {
             myRigidBody.velocity = new Vector3(-moveSpeed, myRigidBody.velocity.y, 0f);
-            transform.localScale = new Vector3(-0.29173f, 0.29173f, 0.29173f);
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
 
