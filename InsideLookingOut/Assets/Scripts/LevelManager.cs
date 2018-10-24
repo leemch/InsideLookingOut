@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum transformation { robot, trashCan, mouse, penguin };
+
 public class LevelManager : MonoBehaviour {
 
     public float waitToRespawn;
-    PlayerController player;
+    public PlayerController player;
 
     public GameObject deathParticle;
 
@@ -23,12 +25,15 @@ public class LevelManager : MonoBehaviour {
     public GameObject mousePlayer;
     public GameObject trashCanPlayer;
     public GameObject basePlayer;
-
-    public GameObject currentPlayer;
+    public GameObject penguinPlayer;
 
     public GameObject transformParticle;
 
     CameraController cam;
+
+
+
+    public transformation currentForm;
 
     // Use this for initialization
     void Start () {
@@ -42,6 +47,8 @@ public class LevelManager : MonoBehaviour {
         currentLives = startingLives;
         livesText.text = "Lives x " + currentLives;
 
+        currentForm = transformation.robot;
+
     }
 	
 	// Update is called once per frame
@@ -49,19 +56,20 @@ public class LevelManager : MonoBehaviour {
 
         if (Input.GetKeyDown("1"))
         {
-            Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
             transformPlayer("base");
         }
 
         if (Input.GetKeyDown("2"))
         {
-            Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
             transformPlayer("mouse");
         }
         if (Input.GetKeyDown("3"))
         {
-            Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
             transformPlayer("trash can");
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            transformPlayer("penguin");
         }
 
     }
@@ -105,19 +113,27 @@ public class LevelManager : MonoBehaviour {
 
     public void transformPlayer(string type)
     {
-        
 
+        Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
         switch (type) {
             case "base":
                 Instantiate(basePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                currentForm = transformation.robot;
                 break;
 
             case "trash can":
                 Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                currentForm = transformation.trashCan;
                 break;
 
             case "mouse":
                 Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                currentForm = transformation.mouse;
+                break;
+
+            case "penguin":
+                Instantiate(penguinPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                currentForm = transformation.penguin;
                 break;
         }
 
