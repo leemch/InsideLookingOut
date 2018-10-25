@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour {
     public float waitToRespawn;
     public PlayerController player;
 
+    public bool isDead;
+
     public GameObject deathParticle;
 
     public int coins;
@@ -48,6 +50,8 @@ public class LevelManager : MonoBehaviour {
         livesText.text = "Lives x " + currentLives;
 
         currentForm = transformation.robot;
+
+        isDead = false;
 
     }
 	
@@ -93,6 +97,7 @@ public class LevelManager : MonoBehaviour {
     public IEnumerator RespawnCo()
     {
         player.gameObject.SetActive(false);
+        isDead = true;
 
         Instantiate(deathParticle, player.transform.position, player.transform.rotation);
 
@@ -101,6 +106,8 @@ public class LevelManager : MonoBehaviour {
         player.transform.parent = null;
         player.transform.position = player.respawnPoint;
         player.gameObject.SetActive(true);
+
+        isDead = false;
 
         yield return null;
     }
@@ -114,33 +121,39 @@ public class LevelManager : MonoBehaviour {
     public void transformPlayer(string type)
     {
 
-        Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
-        switch (type) {
-            case "base":
-                Instantiate(basePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
-                currentForm = transformation.robot;
-                break;
+        if (!isDead)
+        {
 
-            case "trash can":
-                Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
-                currentForm = transformation.trashCan;
-                break;
+            Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
+            switch (type)
+            {
+                case "base":
+                    Instantiate(basePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                    currentForm = transformation.robot;
+                    break;
 
-            case "mouse":
-                Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
-                currentForm = transformation.mouse;
-                break;
+                case "trash can":
+                    Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                    currentForm = transformation.trashCan;
+                    break;
 
-            case "penguin":
-                Instantiate(penguinPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
-                currentForm = transformation.penguin;
-                break;
+                case "mouse":
+                    Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                    currentForm = transformation.mouse;
+                    break;
+
+                case "penguin":
+                    Instantiate(penguinPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                    currentForm = transformation.penguin;
+                    break;
+            }
+
+            Destroy(player.gameObject);
+
+            player = FindObjectOfType<PlayerController>();
+            cam.target = player.gameObject;
         }
 
-        Destroy(player.gameObject);
-
-        player = FindObjectOfType<PlayerController>();
-        cam.target = player.gameObject;
     }
 
 

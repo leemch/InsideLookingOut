@@ -53,13 +53,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitToRespawn: 2
   player: {fileID: 0}
+  isDead: 0
   deathParticle: {fileID: 1847031952115904, guid: fa0dc97c5b0c7df46888e6274a01bc9d,
     type: 2}
   coins: 0
   health: 0
   pointText: {fileID: 0}
   healthText: {fileID: 0}
-  startingLives: 3
+  startingLives: 100
   currentLives: 0
   livesText: {fileID: 0}
   mousePlayer: {fileID: 1880912998868496, guid: a570bb444b841124e933957862583354,
@@ -67,5 +68,7 @@ MonoBehaviour:
   trashCanPlayer: {fileID: 1426536744289202, guid: b8b91d981ad547a4190ed59cfe14d0d5,
     type: 2}
   basePlayer: {fileID: 1940421525452122, guid: 309f1a52595ea3848a5862ff5d4260b7, type: 2}
+  penguinPlayer: {fileID: 0}
   transformParticle: {fileID: 1847031952115904, guid: b84fcaff2bcc0444daeb0dcfa6ffadc8,
     type: 2}
+  currentForm: 0

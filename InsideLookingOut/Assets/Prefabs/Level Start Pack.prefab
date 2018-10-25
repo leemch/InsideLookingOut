@@ -621,6 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitToRespawn: 2
   player: {fileID: 0}
+  isDead: 0
   deathParticle: {fileID: 1847031952115904, guid: fa0dc97c5b0c7df46888e6274a01bc9d,
     type: 2}
   coins: 0
@@ -630,13 +631,16 @@ MonoBehaviour:
   startingLives: 3
   currentLives: 0
   livesText: {fileID: 114209123219838910}
-  mousePlayer: {fileID: 1880912998868496, guid: a570bb444b841124e933957862583354,
+  mousePlayer: {fileID: 1213629966968170, guid: a570bb444b841124e933957862583354,
     type: 2}
   trashCanPlayer: {fileID: 1426536744289202, guid: b8b91d981ad547a4190ed59cfe14d0d5,
     type: 2}
   basePlayer: {fileID: 1940421525452122, guid: 309f1a52595ea3848a5862ff5d4260b7, type: 2}
+  penguinPlayer: {fileID: 1379381677340976, guid: ded4de60555d8f74db33058d308625e8,
+    type: 2}
   transformParticle: {fileID: 1847031952115904, guid: b84fcaff2bcc0444daeb0dcfa6ffadc8,
     type: 2}
+  currentForm: 0
 --- !u!114 &114594381185125612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -843,7 +847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -208, y: 94}
+  m_AnchoredPosition: {x: -229.6, y: 94}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224439193948176496
@@ -882,7 +886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -375, y: 148}
+  m_AnchoredPosition: {x: -403.2, y: 148}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224768130680253416
