@@ -107,14 +107,14 @@ public class GuardController : MonoBehaviour {
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "KillPlane")
-        {
-            Destroy(gameObject);
-        }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+        //if(other.tag == "KillPlane")
+        //{
+            //Destroy(gameObject);
+        //}
 
-    }
+    //}
 
     void OnCollisionEnter2D(Collision2D other)
     {

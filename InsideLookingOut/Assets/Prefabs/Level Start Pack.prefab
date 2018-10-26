@@ -263,7 +263,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071074904074180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -41.44, y: -0.7, z: 0}
+  m_LocalPosition: {x: 4.7, y: -0.7, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4022292174075862}
@@ -628,7 +628,7 @@ MonoBehaviour:
   health: 0
   pointText: {fileID: 114629133906003084}
   healthText: {fileID: 114510503059081578}
-  startingLives: 3
+  startingLives: 100
   currentLives: 0
   livesText: {fileID: 114209123219838910}
   mousePlayer: {fileID: 1213629966968170, guid: a570bb444b841124e933957862583354,
