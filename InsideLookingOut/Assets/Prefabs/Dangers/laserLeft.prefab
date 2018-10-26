@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61446250420461652}
   - component: {fileID: 114703949405885050}
   m_Layer: 0
-  m_Name: laser
+  m_Name: laserLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08a3e9cb25b3f34480ae73ee4f898a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velX: 8
+  velX: -8
 --- !u!212 &212462880684048178
 SpriteRenderer:
   m_ObjectHideFlags: 1

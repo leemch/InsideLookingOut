@@ -5,9 +5,12 @@ using UnityEngine;
 public class laserTrapScript : MonoBehaviour {
 
     public GameObject laser;
+    public GameObject laserLeft;
     Vector2 bulletPos;
     public float fireRate = 0.5f;
     float nextFire = 0.0f;
+
+    public floorTrigger trigger;
 
 	// Use this for initialization
 	void Start () {
@@ -16,10 +19,14 @@ public class laserTrapScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Time.time > nextFire)
+
+        if (trigger.triggered)
         {
-            nextFire = Time.time + fireRate;
-            fire();
+            if (Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                fire();
+            }
         }
 	}
 
@@ -28,5 +35,6 @@ public class laserTrapScript : MonoBehaviour {
     {
         bulletPos = transform.position;
         Instantiate(laser, bulletPos, Quaternion.identity);
+        Instantiate(laserLeft, bulletPos, Quaternion.identity);
     }
 }
