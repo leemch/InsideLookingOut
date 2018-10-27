@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4600799108447576}
   - component: {fileID: 212669534148482482}
   - component: {fileID: 58997989118221936}
-  - component: {fileID: 114432545507879154}
+  - component: {fileID: 114154678393710972}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: lifePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1104348704978572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.09, y: 5.8940206, z: 0}
-  m_LocalScale: {x: 0.02465432, y: 0.02465432, z: 0.02465432}
+  m_LocalPosition: {x: -1.35933, y: -0.867916, z: 0}
+  m_LocalScale: {x: 0.7064256, y: 0.7064256, z: 0.7064256}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,8 +56,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 8.48
---- !u!114 &114432545507879154
+  m_Radius: 0.4
+--- !u!114 &114154678393710972
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1104348704978572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 011821d61e62c294ea61f1d96a4c623f, type: 3}
+  m_Script: {fileID: 11500000, guid: 93a24d2a93c542942b52d3d4a01905c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212669534148482482
@@ -103,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aa271f34c6d069347981c3d57375d728, type: 3}
+  m_Sprite: {fileID: 21300714, guid: 5453a30a7e623044eb680b30d62b50e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

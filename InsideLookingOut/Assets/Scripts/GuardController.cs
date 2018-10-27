@@ -39,7 +39,7 @@ public class GuardController : MonoBehaviour {
 
         if(Vector3.Distance(player.transform.position, transform.position) < 3f && lvlManager.currentForm != transformation.trashCan)
         {
-            if (player.transform.position.x > leftPoint.position.x && player.transform.position.x < rightPoint.position.x)
+            if (player.transform.position.x > leftPoint.position.x && player.transform.position.x < rightPoint.position.x && lvlManager.isDead == false)
             {
                 moveSpeed = 2f;
                 if (transform.position.x - player.transform.position.x > 0f)

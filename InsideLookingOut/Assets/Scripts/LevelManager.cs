@@ -10,15 +10,17 @@ public class LevelManager : MonoBehaviour {
     public float waitToRespawn;
     public PlayerController player;
 
+    bool[] transformUnlocks = new bool[] { false, false, false, false };
+
     public bool isDead;
 
     public GameObject deathParticle;
 
     public int coins;
-    public int health;
+    public int battery;
 
     public Text pointText;
-    public Text healthText;
+    public Text batteryText;
 
     public int startingLives;
     public int currentLives;
@@ -43,8 +45,8 @@ public class LevelManager : MonoBehaviour {
         cam = FindObjectOfType<CameraController>();
 
         pointText.text = "Points: " + coins;
-        health = 100;
-        healthText.text = "Health: " + health;
+        battery = 100;
+        batteryText.text = "Battery: " + battery + "%";
 
         currentLives = startingLives;
         livesText.text = "Lives x " + currentLives;
@@ -118,11 +120,31 @@ public class LevelManager : MonoBehaviour {
         pointText.text = "Points: " + coins;
     }
 
+    public void addLives(int amount)
+    {
+        currentLives += amount;
+        livesText.text = "Lives x" + currentLives;
+    }
+
+    public void addBattery(int amount)
+    {
+        battery += amount;
+
+        if (battery > 100)
+            battery = 100;
+        if (battery < 0)
+            battery = 0;
+
+        batteryText.text = "Battery: " + battery + "%";
+    }
+
     public void transformPlayer(string type)
     {
 
         if (!isDead)
         {
+
+            addBattery(-10);
 
             Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
             switch (type)
@@ -139,11 +161,13 @@ public class LevelManager : MonoBehaviour {
 
                 case "mouse":
                     Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                    //addBattery(-10);
                     currentForm = transformation.mouse;
                     break;
 
                 case "penguin":
                     Instantiate(penguinPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
+                    //addBattery(-10);
                     currentForm = transformation.penguin;
                     break;
             }

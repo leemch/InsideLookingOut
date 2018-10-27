@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4600799108447576}
   - component: {fileID: 212669534148482482}
-  - component: {fileID: 58997989118221936}
-  - component: {fileID: 114432545507879154}
+  - component: {fileID: 114726013797131370}
+  - component: {fileID: 61081089544642564}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: battery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,14 +36,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1104348704978572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.09, y: 5.8940206, z: 0}
-  m_LocalScale: {x: 0.02465432, y: 0.02465432, z: 0.02465432}
+  m_LocalPosition: {x: -0.008449256, y: -0.79, z: 0}
+  m_LocalScale: {x: 0.30743644, y: 0.30743644, z: 0.30743644}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58997989118221936
-CircleCollider2D:
+--- !u!61 &61081089544642564
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -51,13 +51,23 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 17.01, y: 18}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 8.48
---- !u!114 &114432545507879154
+  m_Size: {x: 1.13, y: 2.3}
+  m_EdgeRadius: 0
+--- !u!114 &114726013797131370
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1104348704978572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 011821d61e62c294ea61f1d96a4c623f, type: 3}
+  m_Script: {fileID: 11500000, guid: 696f0a0fc9447ba42aea5bee2e0dfb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212669534148482482
@@ -103,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aa271f34c6d069347981c3d57375d728, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d8e8cec0c4e4614da0ccee7a2772aa4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
