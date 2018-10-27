@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour {
         player.transform.parent = null;
         player.transform.position = player.respawnPoint;
         player.gameObject.SetActive(true);
-
+        transformPlayer("base");
         isDead = false;
 
         yield return null;
