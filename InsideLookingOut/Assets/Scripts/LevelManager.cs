@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour {
     public int coins;
     public int battery;
 
+
     public Text pointText;
     public Text batteryText;
 
@@ -62,21 +63,25 @@ public class LevelManager : MonoBehaviour {
 
         if (Input.GetKeyDown("1"))
         {
+
             transformPlayer("base");
         }
 
         if (Input.GetKeyDown("2"))
         {
-            transformPlayer("mouse");
+            if(transformUnlocks[0] == true)
+            transformPlayer("trash can");
+            
         }
         if (Input.GetKeyDown("3"))
         {
-            transformPlayer("trash can");
+            if (transformUnlocks[1] == true)
+                transformPlayer("mouse");
         }
-        if (Input.GetKeyDown("4"))
-        {
-            transformPlayer("penguin");
-        }
+        //if (Input.GetKeyDown("4"))
+        //{
+        //    transformPlayer("penguin");
+        //}
 
     }
 
@@ -138,14 +143,36 @@ public class LevelManager : MonoBehaviour {
         batteryText.text = "Battery: " + battery + "%";
     }
 
+    public void unlockTransform(string type)
+    {
+        switch (type)
+        {
+            case "trash can":
+                transformUnlocks[0] = true;
+                break;
+
+            case "mouse":
+                transformUnlocks[1] = true;
+                break;
+
+            case "penguin":
+                transformUnlocks[2] = true;
+                break;
+
+        }
+    }
+
+
+    public void startTimer(float length)
+    {
+
+    }
+
     public void transformPlayer(string type)
     {
 
         if (!isDead)
         {
-
-            addBattery(-10);
-
             Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
             switch (type)
             {
@@ -176,6 +203,8 @@ public class LevelManager : MonoBehaviour {
 
             player = FindObjectOfType<PlayerController>();
             cam.target = player.gameObject;
+
+
         }
 
     }

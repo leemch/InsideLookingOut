@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class trashcanScript : MonoBehaviour {
 
-    private PlayerController player;
+    private LevelManager lvlManager;
 
-	// Use this for initialization
-	void Start () {
-        player = FindObjectOfType<PlayerController>();
-	}
+    // Use this for initialization
+    void Start () {
+        lvlManager = FindObjectOfType<LevelManager>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,7 +20,7 @@ public class trashcanScript : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            player.canTransform = true;
+            lvlManager.unlockTransform("trash can");
             Destroy(gameObject);
         }
     }

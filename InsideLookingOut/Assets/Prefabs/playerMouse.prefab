@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 50442938595833472}
   - component: {fileID: 114495458849960354}
   - component: {fileID: 95281971141415198}
+  - component: {fileID: 114067481759264816}
   m_Layer: 9
   m_Name: playerMouse
   m_TagString: Player
@@ -136,6 +137,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114067481759264816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213629966968170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ddd60c2aa3ebcc4fb15ffff0955c315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLimit: 3
+  timer: 0
 --- !u!114 &114495458849960354
 MonoBehaviour:
   m_ObjectHideFlags: 1
