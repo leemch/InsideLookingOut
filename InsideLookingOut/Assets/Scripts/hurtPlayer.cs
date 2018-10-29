@@ -21,6 +21,7 @@ public class hurtPlayer : MonoBehaviour {
     {
         if(collision.tag == "Player")
         {
+            if(lvlManager.currentForm != transformation.trashCan)
             lvlManager.respawn();
         }
     }

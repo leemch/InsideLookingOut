@@ -14,7 +14,7 @@ public class transformTimerScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         lvlManager = FindObjectOfType<LevelManager>();
-        timer = timeLimit;
+        timer = timeLimit+1;
         timerText.text = timer.ToString();
     }
 	
@@ -32,7 +32,8 @@ public class transformTimerScript : MonoBehaviour {
             lvlManager.transformPlayer("base");
         }
         
-        timerText.text = timer.ToString();
+        timerText.text = ((int)timer).ToString();
+
         //timerText.transform.position = gameObject.transform.position;
     }
 }

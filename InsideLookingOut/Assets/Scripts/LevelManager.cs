@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour {
 
 
 
+
     public transformation currentForm;
 
     // Use this for initialization
@@ -163,16 +164,22 @@ public class LevelManager : MonoBehaviour {
     }
 
 
-    public void startTimer(float length)
-    {
-
-    }
 
     public void transformPlayer(string type)
     {
 
         if (!isDead)
         {
+            bool facingRight;
+            if(player.transform.localScale.x > 0)
+            {
+                facingRight = true;
+            }
+            else
+            {
+                facingRight = false;
+            }
+
             Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
             switch (type)
             {
@@ -184,6 +191,7 @@ public class LevelManager : MonoBehaviour {
                 case "trash can":
                     Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.trashCan;
+                    addBattery(-10);
                     break;
 
                 case "mouse":
@@ -203,6 +211,11 @@ public class LevelManager : MonoBehaviour {
 
             player = FindObjectOfType<PlayerController>();
             cam.target = player.gameObject;
+
+            if (!facingRight)
+            {
+                player.transform.localScale = new Vector3(-player.transform.localScale.x, player.transform.localScale.y, player.transform.localScale.z);
+            }
 
 
         }
