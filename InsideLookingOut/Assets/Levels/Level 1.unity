@@ -182,6 +182,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4541749965020534, guid: d118710b69f4f7a41ad91f8f31625c96,
     type: 2}
   m_PrefabInternal: {fileID: 865404}
+--- !u!4 &6142840 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 153569311}
 --- !u!1001 &11980974
 Prefab:
   m_ObjectHideFlags: 0
@@ -3510,6 +3515,7 @@ GameObject:
   - component: {fileID: 762039730}
   - component: {fileID: 762039729}
   - component: {fileID: 762039731}
+  - component: {fileID: 762039732}
   m_Layer: 0
   m_Name: npc1
   m_TagString: Untagged
@@ -3601,6 +3607,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 1.81}
   m_EdgeRadius: 0
+--- !u!114 &762039732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 762039728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ac2745b92158542b36a8229806595c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Prisoner
+    sentences:
+    - Hey man
+    - get me some cigs
+    - Ill give you a key
 --- !u!1001 &764280761
 Prefab:
   m_ObjectHideFlags: 0
@@ -5629,6 +5652,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4541749965020534, guid: d118710b69f4f7a41ad91f8f31625c96,
     type: 2}
   m_PrefabInternal: {fileID: 375207932}
+--- !u!1 &1336956949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336956950}
+  - component: {fileID: 1336956951}
+  m_Layer: 0
+  m_Name: dialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1336956950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1336956949}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6142840}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336956951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1336956949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a674c694bf7bc47ba045cfc9fd7219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1348061037
 Prefab:
   m_ObjectHideFlags: 0

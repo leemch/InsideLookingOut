@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class npc1Script : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public dialogue dialogue;
+
+    public void TriggerDialog()
+    {
+        FindObjectOfType<dialogueManager>().StartDialogue(dialogue);
+    }
 }
