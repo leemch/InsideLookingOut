@@ -11,6 +11,7 @@ public class npc1Script : MonoBehaviour {
     {
         FindObjectOfType<dialogueManager>().StartDialogue(dialogue);
     }
+<<<<<<< HEAD
 =======
 	// Use this for initialization
 	void Start () {
@@ -22,4 +23,11 @@ public class npc1Script : MonoBehaviour {
 		
 	}
 >>>>>>> parent of 81592d1... Merge branch 'master' of https://github.com/leemch/InsideLookingOut
+=======
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        TriggerDialog();
+    }
+>>>>>>> parent of 3834d60... reverse commit
 }
