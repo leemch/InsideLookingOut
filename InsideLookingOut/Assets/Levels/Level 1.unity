@@ -6498,6 +6498,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 86
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1316249329
 GameObject:
   m_ObjectHideFlags: 0
@@ -6578,6 +6579,8 @@ Transform:
 >>>>>>> parent of b34b606... more asset
 =======
 >>>>>>> parent of fde7a9f... update assets
+=======
+>>>>>>> parent of a05bd23... update poster asset
 --- !u!1001 &1318615432
 Prefab:
   m_ObjectHideFlags: 0
