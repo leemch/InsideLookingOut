@@ -10,9 +10,4 @@ public class npc1Script : MonoBehaviour {
     {
         FindObjectOfType<dialogueManager>().StartDialogue(dialogue);
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        TriggerDialog();
-    }
 }

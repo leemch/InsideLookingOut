@@ -1,16 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 public class dialogueManager : MonoBehaviour {
 
-
-    public Text nameText;
-    public Text dialogueText;
     private Queue<string> sentences;
-
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +14,8 @@ public class dialogueManager : MonoBehaviour {
 
     public void StartDialogue(dialogue dialogue)
     {
+        Debug.Log("Starting convo with" + dialogue.name);
 
-
-        nameText.text = dialogue.name;
         sentences.Clear();
 
         foreach(string sentence in dialogue.sentences)
@@ -41,7 +34,7 @@ public class dialogueManager : MonoBehaviour {
         }
 
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        Debug.Log(sentence);
     }
 
     void EndDialogue()
