@@ -10,12 +10,13 @@ public class laserTrapScript : MonoBehaviour {
     public float fireRate = 0.5f;
     float nextFire = 0.0f;
 
+
     public floorTrigger trigger;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

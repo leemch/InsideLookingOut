@@ -8,6 +8,7 @@ TagManager:
   - checkPoint
   - movingPlatform
   - Boss
+  - killGround
   layers:
   - Default
   - TransparentFX
@@ -42,7 +43,7 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: World Objects
+  - name: Background
     uniqueID: 3421570997
     locked: 0
   - name: Default
@@ -50,4 +51,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2549347969
+    locked: 0
+  - name: Foreground
+    uniqueID: 3964380169
     locked: 0

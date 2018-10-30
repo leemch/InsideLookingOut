@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour {
     public int coins;
     public int battery;
 
+    public bool hasCigs;
 
     public Text pointText;
     public Text batteryText;
@@ -26,6 +27,8 @@ public class LevelManager : MonoBehaviour {
     public int startingLives;
     public int currentLives;
     public Text livesText;
+
+    public Vector3 respawnPoint;
 
     public GameObject mousePlayer;
     public GameObject trashCanPlayer;
@@ -50,12 +53,16 @@ public class LevelManager : MonoBehaviour {
         battery = 100;
         batteryText.text = "Battery: " + battery + "%";
 
+        respawnPoint = player.transform.position;
+
         currentLives = startingLives;
         livesText.text = "Lives x " + currentLives;
 
         currentForm = transformation.robot;
 
         isDead = false;
+
+        hasCigs = false;
 
     }
 	
@@ -70,8 +77,11 @@ public class LevelManager : MonoBehaviour {
 
         if (Input.GetKeyDown("2"))
         {
-            if(transformUnlocks[0] == true)
-            transformPlayer("trash can");
+            if (battery > 0)
+            {
+                if (transformUnlocks[0] == true)
+                    transformPlayer("trash can");
+            }
             
         }
         if (Input.GetKeyDown("3"))
@@ -112,7 +122,7 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(waitToRespawn);
 
         player.transform.parent = null;
-        player.transform.position = player.respawnPoint;
+        player.transform.position = respawnPoint;
         player.gameObject.SetActive(true);
         transformPlayer("base");
         isDead = false;
@@ -191,7 +201,7 @@ public class LevelManager : MonoBehaviour {
                 case "trash can":
                     Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.trashCan;
-                    addBattery(-10);
+                    addBattery(-5);
                     break;
 
                 case "mouse":

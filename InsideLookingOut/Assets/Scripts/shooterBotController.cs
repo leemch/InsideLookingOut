@@ -73,7 +73,7 @@ public class shooterBotController : MonoBehaviour {
             transform.localScale = new Vector3(-0.19f, 0.19f, 0.19f);
         }
 
-        if (spotLight.playerSpotted && lvlManager.isDead == false)
+        if (spotLight.playerSpotted && lvlManager.isDead == false && lvlManager.currentForm != transformation.trashCan)
         {
             if (Time.time > nextFire)
             {

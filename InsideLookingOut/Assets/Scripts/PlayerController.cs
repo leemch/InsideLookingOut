@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour {
     public Sprite trashcanSprite;
     private Sprite playerSprite;
 
-    
+    private Transform[] children = null;
+
+
 
 
 
@@ -44,7 +46,6 @@ public class PlayerController : MonoBehaviour {
 
         sprRender = GetComponent<SpriteRenderer>();
 
-
     }
 	
 	// Update is called once per frame
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetAxisRaw("Horizontal") > 0f)
         {
+
             myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
             //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
             if (transform.localScale.x < 0)
@@ -65,11 +67,13 @@ public class PlayerController : MonoBehaviour {
         }
         else if (Input.GetAxisRaw("Horizontal") < 0f)
         {
+
             myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
             if (transform.localScale.x > 0)
                 transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             else
                 transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
         }
         else
         {
@@ -116,7 +120,12 @@ public class PlayerController : MonoBehaviour {
 
         if(other.tag == "checkPoint")
         {
-            respawnPoint = other.transform.position;
+            lvlManager.respawnPoint = other.transform.position;
+        }
+
+        if (other.tag == "killGround")
+        {
+            lvlManager.respawn();
         }
     }
 
@@ -125,8 +134,12 @@ public class PlayerController : MonoBehaviour {
         if(other.gameObject.tag == "movingPlatform")
         {
             transform.parent = other.transform;
-        }    
+        }
+
+
+
     }
+
 
     private void OnCollisionExit2D(Collision2D other)
     {

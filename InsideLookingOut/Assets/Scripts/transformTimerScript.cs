@@ -9,6 +9,8 @@ public class transformTimerScript : MonoBehaviour {
     public float timer;
     private LevelManager lvlManager;
     public TextMesh timerText;
+    public PlayerController player;
+    private float PlayerscaleX;
 
 
     // Use this for initialization
@@ -16,24 +18,42 @@ public class transformTimerScript : MonoBehaviour {
         lvlManager = FindObjectOfType<LevelManager>();
         timer = timeLimit+1;
         timerText.text = timer.ToString();
+        player = FindObjectOfType<PlayerController>();
+
+        PlayerscaleX = player.transform.localScale.x;
+
+        //Debug.Log(timerText.transform.localScale.x);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
+
         if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
-        
 
-        if(timer < 0)
+
+        if (timer < 0)
         {
             timer = 0;
             lvlManager.transformPlayer("base");
         }
-        
+
         timerText.text = ((int)timer).ToString();
 
+
+
+        //if (PlayerscaleX != player.transform.localScale.x)
+        //{
+        //    if (player.transform.localScale.x < 0)
+        //    {
+                //timerText.transform.localScale = new Vector3(-timerText.transform.localScale.x, timerText.transform.localScale.y, timerText.transform.localScale.z);
+        //    }
+
+        //}
+    
+        //PlayerscaleX = player.transform.localScale.x;
         //timerText.transform.position = gameObject.transform.position;
     }
 }
