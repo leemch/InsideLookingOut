@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 036c12bee32020347ab6b912a90554e9
+=======
+guid: 089ff0d7bdace4f4dbec5e2d0cf47b64
+>>>>>>> conflict
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: ac9124c03b7da684b9ba9f947d627174
+=======
+    spriteID: f6b121e7aa2b17c4d8a33860407878c3
+>>>>>>> conflict
     vertices: []
     indices: 
     edges: []
