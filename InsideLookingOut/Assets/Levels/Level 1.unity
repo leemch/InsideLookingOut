@@ -6679,7 +6679,10 @@ MonoBehaviour:
 =======
   nameText: {fileID: 0}
   dialogueText: {fileID: 0}
+<<<<<<< HEAD
 >>>>>>> parent of 3834d60... reverse commit
+=======
+>>>>>>> parent of 59378a9... update
 --- !u!1001 &1348061037
 Prefab:
   m_ObjectHideFlags: 0
