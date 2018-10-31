@@ -2,37 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class npc1Script : MonoBehaviour {
+public class exitDoorScript : MonoBehaviour {
 
     public LevelManager lvlManager;
     public dialogue startDialog;
-    public dialogue hasCigsdialogue;
-    
-    public bool gaveCigs = false;
+    public dialogue hasKeydialogue;
+
 
     void Start()
     {
         lvlManager = FindObjectOfType<LevelManager>();
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            if (!gaveCigs)
-            {
-                if (lvlManager.hasCigs)
+
+                if (lvlManager.hasKey)
                 {
-                    lvlManager.hasKey = true;
-                    FindObjectOfType<dialogueManager>().StartDialogue(hasCigsdialogue);
-                    gaveCigs = true;
+                    FindObjectOfType<dialogueManager>().StartDialogue(hasKeydialogue);
                 }
                 else
                 {
                     FindObjectOfType<dialogueManager>().StartDialogue(startDialog);
                 }
-            }
+            
         }
     }
 }

@@ -53,56 +53,65 @@ public class PlayerController : MonoBehaviour {
 
 
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-
-        if (Input.GetAxisRaw("Horizontal") > 0f)
+        if (lvlManager.inDialog == false)
         {
 
-            myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
-            //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            if (transform.localScale.x < 0)
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0f)
-        {
+            if (Input.GetAxisRaw("Horizontal") > 0f)
+            {
 
-            myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
-            if (transform.localScale.x > 0)
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
+                //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                if (transform.localScale.x < 0)
+                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
+            }
+            else if (Input.GetAxisRaw("Horizontal") < 0f)
+            {
+
+                myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
+                if (transform.localScale.x > 0)
+                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                else
+                    transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
+            }
             else
-                transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
-
-        }
-        else
-        {
-            myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
-        }
-
-
-        if (lvlManager.currentForm == transformation.penguin)
-        {
-            if (Input.GetButtonDown("Jump"))
             {
-                myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+                myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
             }
 
+
+            if (lvlManager.currentForm == transformation.penguin)
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+                }
+
+            }
+            else
+            {
+                if (Input.GetButtonDown("Jump") && isGrounded)
+                {
+                    myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+                }
+            }
+
+
+
+            myAnim.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
+            myAnim.SetBool("Grounded", isGrounded);
+
         }
+
+
         else
         {
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
-            }
+            myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, 0f);
         }
-
-
-
-        myAnim.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
-        myAnim.SetBool("Grounded", isGrounded);
-
-
 
     }
 

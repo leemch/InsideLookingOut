@@ -245,6 +245,7 @@ MonoBehaviour:
   timeLimit: 3
   timer: 0
   timerText: {fileID: 102884275412849022}
+  player: {fileID: 0}
 --- !u!212 &212228838145012630
 SpriteRenderer:
   m_ObjectHideFlags: 1

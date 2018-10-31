@@ -20,6 +20,9 @@ public class LevelManager : MonoBehaviour {
     public int battery;
 
     public bool hasCigs;
+    public bool hasKey;
+
+    public bool inDialog;
 
     public Text pointText;
     public Text batteryText;
@@ -29,6 +32,9 @@ public class LevelManager : MonoBehaviour {
     public Text livesText;
 
     public Vector3 respawnPoint;
+
+    public GameObject trashcanIcon;
+    public GameObject mouseIcon;
 
     public GameObject mousePlayer;
     public GameObject trashCanPlayer;
@@ -63,36 +69,42 @@ public class LevelManager : MonoBehaviour {
         isDead = false;
 
         hasCigs = false;
+        hasKey = false;
+        inDialog = false;
 
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown("1"))
+        if (!inDialog)
         {
 
-            transformPlayer("base");
-        }
-
-        if (Input.GetKeyDown("2"))
-        {
-            if (battery > 0)
+            if (Input.GetKeyDown("1"))
             {
-                if (transformUnlocks[0] == true)
-                    transformPlayer("trash can");
+
+                transformPlayer("base");
             }
-            
+
+            if (Input.GetKeyDown("2"))
+            {
+                if (battery > 0)
+                {
+                    if (transformUnlocks[0] == true)
+                        transformPlayer("trash can");
+                }
+
+            }
+            if (Input.GetKeyDown("3"))
+            {
+                if (transformUnlocks[1] == true)
+                    transformPlayer("mouse");
+            }
+            //if (Input.GetKeyDown("4"))
+            //{
+            //    transformPlayer("penguin");
+            //}
         }
-        if (Input.GetKeyDown("3"))
-        {
-            if (transformUnlocks[1] == true)
-                transformPlayer("mouse");
-        }
-        //if (Input.GetKeyDown("4"))
-        //{
-        //    transformPlayer("penguin");
-        //}
 
     }
 
@@ -154,16 +166,25 @@ public class LevelManager : MonoBehaviour {
         batteryText.text = "Battery: " + battery + "%";
     }
 
+    public void setBattery(int amount)
+    {
+        battery = amount;
+
+        batteryText.text = "Battery: " + battery + "%";
+    }
+
     public void unlockTransform(string type)
     {
         switch (type)
         {
             case "trash can":
                 transformUnlocks[0] = true;
+                trashcanIcon.SetActive(true);
                 break;
 
             case "mouse":
                 transformUnlocks[1] = true;
+                mouseIcon.SetActive(true);
                 break;
 
             case "penguin":
@@ -171,6 +192,11 @@ public class LevelManager : MonoBehaviour {
                 break;
 
         }
+    }
+
+    public void resetPlayer()
+    {
+        setBattery(100);
     }
 
 

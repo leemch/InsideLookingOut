@@ -21,6 +21,12 @@ public class transformTimerScript : MonoBehaviour {
         player = FindObjectOfType<PlayerController>();
 
         PlayerscaleX = player.transform.localScale.x;
+        timerText.transform.parent = null;
+
+        if(player.transform.localScale.x < 0)
+        {
+            timerText.transform.localScale = new Vector3(-timerText.transform.localScale.x, timerText.transform.localScale.y, timerText.transform.localScale.z);
+        }
 
         //Debug.Log(timerText.transform.localScale.x);
     }
@@ -37,6 +43,7 @@ public class transformTimerScript : MonoBehaviour {
         if (timer < 0)
         {
             timer = 0;
+            timerText.transform.parent = player.transform;
             lvlManager.transformPlayer("base");
         }
 
@@ -54,6 +61,6 @@ public class transformTimerScript : MonoBehaviour {
         //}
     
         //PlayerscaleX = player.transform.localScale.x;
-        //timerText.transform.position = gameObject.transform.position;
+        timerText.transform.position = new Vector3(player.transform.position.x, player.transform.position.y+1.1f, player.transform.position.z);
     }
 }
