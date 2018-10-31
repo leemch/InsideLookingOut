@@ -853,6 +853,153 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
+--- !u!1001 &153569311
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115640790881240, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -14.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115640790881240, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401828795226732, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1003015871118890, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+      propertyPath: m_Name
+      value: BatteryText
+      objectReference: {fileID: 0}
+    - target: {fileID: 114510503059081578, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Battery: 100%'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114517349029014020, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: batteryText
+      value: 
+      objectReference: {fileID: 1076306126}
+    - target: {fileID: 20210815590694140, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 20210815590694140, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 20210815590694140, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.2784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 224999931417214374, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224999931417214374, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224999931417214374, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224999931417214374, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224999931417214374, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 469
+      objectReference: {fileID: 0}
+    - target: {fileID: 224999931417214374, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -264
+      objectReference: {fileID: 0}
+    - target: {fileID: 114594381185125612, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300714, guid: 5453a30a7e623044eb680b30d62b50e7,
+        type: 3}
+    - target: {fileID: 224561479310499252, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.5339312
+      objectReference: {fileID: 0}
+    - target: {fileID: 224561479310499252, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.5339312
+      objectReference: {fileID: 0}
+    - target: {fileID: 224561479310499252, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.5339312
+      objectReference: {fileID: 0}
+    - target: {fileID: 114517349029014020, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: trashcanIcon
+      value: 
+      objectReference: {fileID: 673006220}
+    - target: {fileID: 114517349029014020, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: mouseIcon
+      value: 
+      objectReference: {fileID: 165597622}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
+  m_IsPrefabAsset: 0
+>>>>>>> parent of 380a058... Dialog updates
 --- !u!1 &157315254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,8 +2893,8 @@ MonoBehaviour:
   dialogue:
     name: Transformation Item found
     sentences:
-    - You found the mouse transformation.  As a mouse you can move fast and get through
-      tight spaces, but cannot jump very high.
+    - You found the mouse transformation.  As a mouse you can move fast but cannot
+      jump very high.
 --- !u!1 &382854955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,6 +3535,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d118710b69f4f7a41ad91f8f31625c96, type: 2}
   m_IsPrefabAsset: 0
+<<<<<<< HEAD
 --- !u!1 &533689029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,6 +3658,8 @@ MonoBehaviour:
     - " \"The main worker there has a tendency to use it for his daily meals. Good
       luck.\"\r"
   triggered: 0
+=======
+>>>>>>> parent of 380a058... Dialog updates
 --- !u!1001 &548223614
 Prefab:
   m_ObjectHideFlags: 0
@@ -4316,8 +4466,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -873396299
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300278, guid: 5453a30a7e623044eb680b30d62b50e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4383,15 +4533,13 @@ MonoBehaviour:
   startDialog:
     name: Prisoner
     sentences:
-    - " \"Oi! Hows it goin buddy?\"\r"
-    - " \"Can ya do me a favour and grab me a pack of smokes from the guard room?
-      I've been craving a fix for quite some time now.\"\r\n"
-    - "\"Once ya got the smokes, pass em back to me and I'll give ya the key to the
-      cafeteria.\"\r"
+    - Hey man
+    - get me some cigs
+    - Ill give you a key.
   hasCigsdialogue:
     name: Prisoner
     sentences:
-    - "\"Great job! I knew ya had it in ya!\"\r"
+    - Thanks here is the key to the exit door.
     - You got a key.
   gaveCigs: 0
 --- !u!1001 &764280761
@@ -6262,6 +6410,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d118710b69f4f7a41ad91f8f31625c96, type: 2}
   m_IsPrefabAsset: 0
+<<<<<<< HEAD
 --- !u!1001 &1049615805
 Prefab:
   m_ObjectHideFlags: 0
@@ -6308,6 +6457,8 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39f9339597329f4cace3bfea1fec7a4, type: 2}
   m_IsPrefabAsset: 0
+=======
+>>>>>>> parent of 380a058... Dialog updates
 --- !u!1001 &1051993026
 Prefab:
   m_ObjectHideFlags: 0
@@ -8919,7 +9070,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4342891982887562, guid: 7534ae948831d4746a1348efc3201ab7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -17.58
+      value: -16.06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7534ae948831d4746a1348efc3201ab7, type: 2}
