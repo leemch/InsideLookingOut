@@ -3536,6 +3536,7 @@ Prefab:
   m_SourcePrefab: {fileID: 100100000, guid: d118710b69f4f7a41ad91f8f31625c96, type: 2}
   m_IsPrefabAsset: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &533689029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3658,6 +3659,8 @@ MonoBehaviour:
     - " \"The main worker there has a tendency to use it for his daily meals. Good
       luck.\"\r"
   triggered: 0
+=======
+>>>>>>> parent of 380a058... Dialog updates
 =======
 >>>>>>> parent of 380a058... Dialog updates
 --- !u!1001 &548223614
@@ -6411,6 +6414,7 @@ Prefab:
   m_SourcePrefab: {fileID: 100100000, guid: d118710b69f4f7a41ad91f8f31625c96, type: 2}
   m_IsPrefabAsset: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &1049615805
 Prefab:
   m_ObjectHideFlags: 0
@@ -6457,6 +6461,8 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39f9339597329f4cace3bfea1fec7a4, type: 2}
   m_IsPrefabAsset: 0
+=======
+>>>>>>> parent of 380a058... Dialog updates
 =======
 >>>>>>> parent of 380a058... Dialog updates
 --- !u!1001 &1051993026
