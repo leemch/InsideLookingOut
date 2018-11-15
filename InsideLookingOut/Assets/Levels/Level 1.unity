@@ -1052,11 +1052,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 82fcc59... add more images
 --- !u!1001 &153569311
 Prefab:
   m_ObjectHideFlags: 0
@@ -1098,11 +1093,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4115640790881240, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
-      value: -14.98
-=======
       value: -15.29
->>>>>>> parent of 82fcc59... add more images
       objectReference: {fileID: 0}
     - target: {fileID: 4115640790881240, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1205,10 +1196,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
   m_IsPrefabAsset: 0
-<<<<<<< HEAD
->>>>>>> parent of 380a058... Dialog updates
-=======
->>>>>>> parent of 82fcc59... add more images
 --- !u!1 &157315254
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,8 +3160,8 @@ MonoBehaviour:
   dialogue:
     name: Transformation Item found
     sentences:
-    - You found the mouse transformation.  As a mouse you can move fast but cannot
-      jump very high.
+    - You found the mouse transformation.  As a mouse you can move fast and get through
+      tight spaces, but cannot jump very high.
 --- !u!1 &382854955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3884,8 +3871,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d118710b69f4f7a41ad91f8f31625c96, type: 2}
   m_IsPrefabAsset: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &533689029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4008,10 +3993,6 @@ MonoBehaviour:
     - " \"The main worker there has a tendency to use it for his daily meals. Good
       luck.\"\r"
   triggered: 0
-=======
->>>>>>> parent of 380a058... Dialog updates
-=======
->>>>>>> parent of 380a058... Dialog updates
 --- !u!1001 &548223614
 Prefab:
   m_ObjectHideFlags: 0
@@ -4958,8 +4939,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -873396299
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300278, guid: 5453a30a7e623044eb680b30d62b50e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5025,13 +5006,15 @@ MonoBehaviour:
   startDialog:
     name: Prisoner
     sentences:
-    - Hey man
-    - get me some cigs
-    - Ill give you a key.
+    - " \"Oi! Hows it goin buddy?\"\r"
+    - " \"Can ya do me a favour and grab me a pack of smokes from the guard room?
+      I've been craving a fix for quite some time now.\"\r\n"
+    - "\"Once ya got the smokes, pass em back to me and I'll give ya the key to the
+      cafeteria.\"\r"
   hasCigsdialogue:
     name: Prisoner
     sentences:
-    - Thanks here is the key to the exit door.
+    - "\"Great job! I knew ya had it in ya!\"\r"
     - You got a key.
   gaveCigs: 0
 --- !u!1001 &764280761
@@ -7152,8 +7135,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d118710b69f4f7a41ad91f8f31625c96, type: 2}
   m_IsPrefabAsset: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1001 &1049615805
 Prefab:
   m_ObjectHideFlags: 0
@@ -7200,10 +7181,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39f9339597329f4cace3bfea1fec7a4, type: 2}
   m_IsPrefabAsset: 0
-=======
->>>>>>> parent of 380a058... Dialog updates
-=======
->>>>>>> parent of 380a058... Dialog updates
 --- !u!1001 &1051993026
 Prefab:
   m_ObjectHideFlags: 0
@@ -10086,7 +10063,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4342891982887562, guid: 7534ae948831d4746a1348efc3201ab7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -16.06
+      value: -17.58
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7534ae948831d4746a1348efc3201ab7, type: 2}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class exitDoorScript : MonoBehaviour {
 
@@ -23,6 +24,7 @@ public class exitDoorScript : MonoBehaviour {
                 if (lvlManager.hasKey)
                 {
                     FindObjectOfType<dialogueManager>().StartDialogue(hasKeydialogue);
+                    SceneManager.LoadScene("level2");
                 }
                 else
                 {

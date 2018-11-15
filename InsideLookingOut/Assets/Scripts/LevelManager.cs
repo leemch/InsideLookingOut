@@ -206,6 +206,11 @@ public class LevelManager : MonoBehaviour {
 
         if (!isDead)
         {
+            if (currentForm != transformation.robot)
+            {
+                Destroy(FindObjectOfType<transformTimerScript>().timerText.gameObject);
+            }
+
             bool facingRight;
             if(player.transform.localScale.x > 0)
             {
