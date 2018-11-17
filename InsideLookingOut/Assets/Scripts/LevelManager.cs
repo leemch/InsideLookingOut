@@ -100,10 +100,16 @@ public class LevelManager : MonoBehaviour {
                 if (transformUnlocks[1] == true)
                     transformPlayer("mouse");
             }
-            //if (Input.GetKeyDown("4"))
-            //{
-            //    transformPlayer("penguin");
-            //}
+            if (Input.GetKeyDown("4"))
+            {
+                if (transformUnlocks[2] == true)
+                    transformPlayer("penguin");
+            }
+            if (Input.GetKeyDown("5"))
+            {
+                //if (transformUnlocks[3] == true)
+                //    transformPlayer("lizard");
+            }
         }
 
     }
@@ -191,6 +197,10 @@ public class LevelManager : MonoBehaviour {
                 transformUnlocks[2] = true;
                 break;
 
+            case "lizard":
+                transformUnlocks[3] = true;
+                break;
+
         }
     }
 
@@ -237,14 +247,14 @@ public class LevelManager : MonoBehaviour {
 
                 case "mouse":
                     Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
-                    //addBattery(-10);
                     currentForm = transformation.mouse;
+                    addBattery(-10);
                     break;
 
                 case "penguin":
                     Instantiate(penguinPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
-                    //addBattery(-10);
                     currentForm = transformation.penguin;
+                    addBattery(-15);
                     break;
             }
 

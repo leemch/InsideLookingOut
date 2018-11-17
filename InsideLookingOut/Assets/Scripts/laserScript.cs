@@ -5,7 +5,7 @@ using UnityEngine;
 public class laserScript : MonoBehaviour {
 
     public float velX = 5f;
-    float velY = 0f;
+    public float velY = 0f;
     Rigidbody2D rb;
 
 	// Use this for initialization
