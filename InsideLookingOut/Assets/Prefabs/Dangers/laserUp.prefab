@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4162616509564052}
   - component: {fileID: 212462880684048178}
   - component: {fileID: 50202544016744556}
-  - component: {fileID: 61446250420461652}
   - component: {fileID: 114247657329570542}
   - component: {fileID: 114951524537837842}
+  - component: {fileID: 61069186012674190}
   m_Layer: 0
   m_Name: laserUp
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913386677768336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.35, y: 28.4, z: 0}
+  m_LocalPosition: {x: -135.80223, y: -32.55513, z: 0}
   m_LocalScale: {x: 0.32400003, y: 0.7965, z: 0.54}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61446250420461652
+--- !u!61 &61069186012674190
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +73,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 0.22}
+  m_Size: {x: 0.22, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &114247657329570542
 MonoBehaviour:

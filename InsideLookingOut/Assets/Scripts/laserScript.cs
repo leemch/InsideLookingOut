@@ -18,4 +18,10 @@ public class laserScript : MonoBehaviour {
         rb.velocity = new Vector2(velX, velY);
         Destroy(gameObject, 3f);
 	}
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Destroy(gameObject);
+
+    }
 }
