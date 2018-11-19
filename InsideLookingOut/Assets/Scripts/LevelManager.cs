@@ -21,6 +21,8 @@ public class LevelManager : MonoBehaviour {
 
     public bool hasCigs;
     public bool hasKey;
+    public bool hasSandwich;
+    public bool hasLevel2Key;
 
     public bool inDialog;
 

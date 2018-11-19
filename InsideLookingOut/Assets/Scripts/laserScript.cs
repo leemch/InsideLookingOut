@@ -19,9 +19,9 @@ public class laserScript : MonoBehaviour {
         Destroy(gameObject, 3f);
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
-
+        if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
+            Destroy(gameObject);
     }
 }

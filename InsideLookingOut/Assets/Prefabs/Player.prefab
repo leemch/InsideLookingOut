@@ -150,7 +150,7 @@ MonoBehaviour:
   moveSpeed: 3
   transformParticle: {fileID: 1847031952115904, guid: b84fcaff2bcc0444daeb0dcfa6ffadc8,
     type: 2}
-  jumpSpeed: 5
+  jumpSpeed: 7
   groundCheck: {fileID: 4787659134228572}
   groundCheckRadius: 0.25
   whatIsGround:

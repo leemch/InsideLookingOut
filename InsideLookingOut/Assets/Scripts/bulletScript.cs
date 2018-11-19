@@ -25,6 +25,23 @@ public class bulletScript : MonoBehaviour {
         //rb.velocity = new Vector2(velX, velY);
         //Destroy(gameObject, 3f);
 
-
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
+        Destroy(gameObject);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        //if (other.collider.gameObject.layer == LayerMask.NameToLayer("ground"))
+        //{
+            Destroy(gameObject);
+        //}
+    }
+
+
+
+
 }

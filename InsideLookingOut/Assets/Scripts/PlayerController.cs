@@ -144,9 +144,6 @@ public class PlayerController : MonoBehaviour {
         {
             transform.parent = other.transform;
         }
-
-
-
     }
 
 
