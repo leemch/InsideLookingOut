@@ -8,30 +8,51 @@ public class platformPathScript : MonoBehaviour {
     public Transform[] points;
     public float moveSpeed;
     private Vector3 currentTarget;
+    platformScript childScript;
+
+    public bool active;
 
     int numPoints;
 
-    int position;
+    int index;
 
 	// Use this for initialization
 	void Start () {
-        position = 0;
+        index = 0;
         numPoints = points.Length;
-        //currentTarget = point2.position;
-	}
+        currentTarget = points[1].position;
+        bool active = false;
+        childScript = gameObject.GetComponentInChildren<platformScript>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
 
+        if (active)
+        {
+            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
 
+            if (index < (numPoints-1))
+            {
+                if (objectToMove.transform.position == currentTarget)
+                {
+                    currentTarget = points[index + 1].position;
+                    index += 1;
+                }
+            }
+            else
+            {
 
- //       if (objectToMove.transform.position == point1.position)
- //       {
-//            currentTarget = point2.position;
-//        }
-
+                //objectToMove.transform.position = points[0].position;
+                //active = false;
+                //childScript.playerTouched = false ;
+            }
+        }
 
     }
+
+
+
+
 }
