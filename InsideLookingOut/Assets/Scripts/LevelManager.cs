@@ -72,6 +72,14 @@ public class LevelManager : MonoBehaviour {
         hasKey = false;
         inDialog = false;
 
+
+
+        //////developer mode
+        unlockTransform("trash can");
+        unlockTransform("mouse");
+        unlockTransform("penguin");
+        //////
+
     }
 	
 	// Update is called once per frame
@@ -242,19 +250,19 @@ public class LevelManager : MonoBehaviour {
                 case "trash can":
                     Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.trashCan;
-                    addBattery(-5);
+                    //addBattery(-5);
                     break;
 
                 case "mouse":
                     Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.mouse;
-                    addBattery(-10);
+                    //addBattery(-10);
                     break;
 
                 case "penguin":
                     Instantiate(penguinPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.penguin;
-                    addBattery(-15);
+                    //addBattery(-15);
                     break;
             }
 

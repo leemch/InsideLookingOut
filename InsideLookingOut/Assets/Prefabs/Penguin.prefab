@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50969435089875416}
   - component: {fileID: 114092053629171066}
   - component: {fileID: 95386254600184326}
+  - component: {fileID: 114425756361917224}
   m_Layer: 9
   m_Name: Penguin
   m_TagString: Player
@@ -46,6 +47,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1902560363247574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4391229855379150}
+  - component: {fileID: 23299130294479942}
+  - component: {fileID: 102547269947692076}
+  m_Layer: 0
+  m_Name: timerText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4378739703128138
 Transform:
   m_ObjectHideFlags: 1
@@ -55,6 +73,19 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -8.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4966748862622644}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4391229855379150
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902560363247574}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1024.3477, y: -265.30618, z: 0}
+  m_LocalScale: {x: 3.572818, y: 3.572818, z: 3.572818}
   m_Children: []
   m_Father: {fileID: 4966748862622644}
   m_RootOrder: 0
@@ -69,10 +100,46 @@ Transform:
   m_LocalPosition: {x: -37.773624, y: -1.1051298, z: 0}
   m_LocalScale: {x: 0.11, y: 0.11, z: 0.11}
   m_Children:
+  - {fileID: 4391229855379150}
   - {fileID: 4378739703128138}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23299130294479942
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902560363247574}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!50 &50969435089875416
 Rigidbody2D:
   serializedVersion: 4
@@ -136,6 +203,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!102 &102547269947692076
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902560363247574}
+  m_Text: 0
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190335
 --- !u!114 &114092053629171066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +250,21 @@ MonoBehaviour:
   canTransform: 0
   isTransformed: 0
   trashcanSprite: {fileID: 21300000, guid: 51e8615f65613e84089a3adf1d95e8df, type: 3}
+--- !u!114 &114425756361917224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379381677340976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ddd60c2aa3ebcc4fb15ffff0955c315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLimit: 3
+  timer: 0
+  timerText: {fileID: 102547269947692076}
+  player: {fileID: 0}
 --- !u!212 &212626970788704982
 SpriteRenderer:
   m_ObjectHideFlags: 1
