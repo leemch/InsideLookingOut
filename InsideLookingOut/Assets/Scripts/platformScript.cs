@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class platformScrit : MonoBehaviour {
 
-    bool playerTouched;
+    public bool playerTouched;
 
 	// Use this for initialization
 	void Start () {

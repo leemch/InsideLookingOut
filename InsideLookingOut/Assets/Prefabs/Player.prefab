@@ -155,7 +155,7 @@ MonoBehaviour:
   groundCheckRadius: 0.25
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8448
   isGrounded: 0
   respawnPoint: {x: 0, y: 0, z: 0}
   lvlManager: {fileID: 0}

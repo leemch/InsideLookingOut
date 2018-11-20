@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212670044148930722}
   - component: {fileID: 114765160419405964}
   - component: {fileID: 61013500096490976}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Laser Trap (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

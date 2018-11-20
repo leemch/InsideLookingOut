@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class platformPathScript : MonoBehaviour {
 
+    public LevelManager lvlManager;
     public GameObject objectToMove;
     public Transform[] points;
     public float moveSpeed;
     private Vector3 currentTarget;
     platformScript childScript;
+
+    
 
     public bool active;
 
@@ -21,8 +24,10 @@ public class platformPathScript : MonoBehaviour {
         index = 0;
         numPoints = points.Length;
         currentTarget = points[1].position;
-        bool active = false;
+        active = false;
         childScript = gameObject.GetComponentInChildren<platformScript>();
+
+        lvlManager = FindObjectOfType<LevelManager>();
     }
 	
 	// Update is called once per frame
@@ -41,15 +46,25 @@ public class platformPathScript : MonoBehaviour {
                     index += 1;
                 }
             }
-            else
-            {
 
-                //objectToMove.transform.position = points[0].position;
-                //active = false;
-                //childScript.playerTouched = false ;
+
+            if (lvlManager.isDead)
+            {
+                reset();
             }
+
+
         }
 
+    }
+
+    public void reset()
+    {
+        active = false;
+        objectToMove.transform.position = points[0].position;
+        childScript.playerTouched = false ;
+        index = 0;
+        currentTarget = points[1].position;
     }
 
 

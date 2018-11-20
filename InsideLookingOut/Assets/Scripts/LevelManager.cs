@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour {
 
     public GameObject trashcanIcon;
     public GameObject mouseIcon;
+    public GameObject penguinIcon;
 
     public GameObject mousePlayer;
     public GameObject trashCanPlayer;
@@ -47,10 +48,8 @@ public class LevelManager : MonoBehaviour {
 
     CameraController cam;
 
-
-
-
     public transformation currentForm;
+    public string currentFormString;
 
     // Use this for initialization
     void Start () {
@@ -67,6 +66,7 @@ public class LevelManager : MonoBehaviour {
         livesText.text = "Lives x " + currentLives;
 
         currentForm = transformation.robot;
+        currentFormString = "base";
 
         isDead = false;
 
@@ -77,9 +77,9 @@ public class LevelManager : MonoBehaviour {
 
 
         //////developer mode
-        unlockTransform("trash can");
-        unlockTransform("mouse");
-        unlockTransform("penguin");
+        //unlockTransform("trash can");
+        //unlockTransform("mouse");
+        //unlockTransform("penguin");
         //////
 
     }
@@ -152,9 +152,8 @@ public class LevelManager : MonoBehaviour {
         player.transform.parent = null;
         player.transform.position = respawnPoint;
         player.gameObject.SetActive(true);
-        transformPlayer("base");
         isDead = false;
-
+        transformPlayer("base");
         yield return null;
     }
 
@@ -205,6 +204,7 @@ public class LevelManager : MonoBehaviour {
 
             case "penguin":
                 transformUnlocks[2] = true;
+                penguinIcon.SetActive(true);
                 break;
 
             case "lizard":
@@ -224,7 +224,7 @@ public class LevelManager : MonoBehaviour {
     public void transformPlayer(string type)
     {
 
-        if (!isDead)
+        if ((!isDead) && type != currentFormString)
         {
             if (currentForm != transformation.robot)
             {
@@ -240,6 +240,8 @@ public class LevelManager : MonoBehaviour {
             {
                 facingRight = false;
             }
+
+            currentFormString = type;
 
             Instantiate(transformParticle, player.gameObject.transform.position, player.gameObject.transform.rotation);
             switch (type)
