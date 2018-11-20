@@ -5,6 +5,7 @@ using UnityEngine;
 public class level2Key : MonoBehaviour {
 
     private LevelManager lvlManager;
+    public Animator floorAnimator;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class level2Key : MonoBehaviour {
         if(other.tag == "Player")
         {
             lvlManager.hasLevel2Key = true;
+            floorAnimator.SetBool("hasKey", true);
             Destroy(gameObject);
         }
         
