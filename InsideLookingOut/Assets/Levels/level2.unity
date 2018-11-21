@@ -3557,11 +3557,12 @@ MonoBehaviour:
   startDialog:
     name: Bubba
     sentences:
-    - Find my sandwich
+    - "Hey there pal, can ya do me a solid? i\u2019m pretty hungry and could use a
+      sandwich, if you get me one I\u2019ll make it worth your time."
   hasSandwichDialog:
     name: Task complete
     sentences:
-    - Thank you
+    - "Thanks pal, take these, you\u2019ll have more use for them than I would."
     - You received 3 lives.
   gaveSandwich: 0
 --- !u!1 &238528530
