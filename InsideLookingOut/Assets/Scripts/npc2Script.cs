@@ -7,6 +7,7 @@ public class npc2Script : MonoBehaviour {
     public LevelManager lvlManager;
     public dialogue startDialog;
     public dialogue hasSandwichDialog;
+    bool hasTalked;
     
     public bool gaveSandwich = false;
 
@@ -22,7 +23,7 @@ public class npc2Script : MonoBehaviour {
         {
             if (!gaveSandwich)
             {
-                if (lvlManager.hasCigs)
+                if (lvlManager.hasSandwich)
                 {
                     lvlManager.addLives(3);
                     FindObjectOfType<dialogueManager>().StartDialogue(hasSandwichDialog);
@@ -30,7 +31,11 @@ public class npc2Script : MonoBehaviour {
                 }
                 else
                 {
-                    FindObjectOfType<dialogueManager>().StartDialogue(startDialog);
+                    if (!hasTalked)
+                    {
+                        hasTalked = true;
+                        FindObjectOfType<dialogueManager>().StartDialogue(startDialog);
+                    }
                 }
             }
         }
