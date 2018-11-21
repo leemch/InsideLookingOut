@@ -128,6 +128,7 @@ public class LevelManager : MonoBehaviour {
     {
         currentLives -= 1;
         livesText.text = "Lives x" + currentLives;
+        setBattery(100);
 
         if (currentLives > 0)
         {
@@ -254,19 +255,19 @@ public class LevelManager : MonoBehaviour {
                 case "trash can":
                     Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.trashCan;
-                    //addBattery(-5);
+                    addBattery(-1);
                     break;
 
                 case "mouse":
                     Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.mouse;
-                    //addBattery(-10);
+                    addBattery(-1);
                     break;
 
                 case "penguin":
                     Instantiate(penguinPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.penguin;
-                    //addBattery(-15);
+                    addBattery(-1);
                     break;
             }
 
