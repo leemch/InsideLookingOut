@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224774718488963060}
   - component: {fileID: 222121360676217118}
   - component: {fileID: 114510503059081578}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: BatteryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 224780584586826654}
   - component: {fileID: 222196075243895972}
   - component: {fileID: 114452708225340902}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 224819142526265538}
   - component: {fileID: 222155637548331806}
   - component: {fileID: 114639194356010918}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 224768374680342178}
   - component: {fileID: 222420068753281016}
   - component: {fileID: 114206565036381270}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 224922144236998662}
   - component: {fileID: 222769164144047672}
   - component: {fileID: 114101956251607700}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: BaseTransformIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 224554822006841112}
   - component: {fileID: 222816888479129994}
   - component: {fileID: 114283093839882710}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 224593789687299230}
   - component: {fileID: 222203203615139320}
   - component: {fileID: 114417082233279308}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 224427495329270398}
   - component: {fileID: 222375338301759332}
   - component: {fileID: 114954327062638242}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 224093148567147704}
   - component: {fileID: 222785039085092350}
   - component: {fileID: 114209123219838910}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: LivesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 222370177369962540}
   - component: {fileID: 114514847341091442}
   - component: {fileID: 114399637656129302}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 224452028745421088}
   - component: {fileID: 222774079243954518}
   - component: {fileID: 114599793200958888}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: MouseTransformIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 224146830276836916}
   - component: {fileID: 222477527005152612}
   - component: {fileID: 114854258334148210}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: SentenceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 224096428078295928}
   - component: {fileID: 222468547538155698}
   - component: {fileID: 114429716955144058}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: MouseTransformIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 224058517867237970}
   - component: {fileID: 222486056710128124}
   - component: {fileID: 114186239438587310}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 224980291152139028}
   - component: {fileID: 222657261680712884}
   - component: {fileID: 114422649985700204}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 224274413688146250}
   - component: {fileID: 222302687363529838}
   - component: {fileID: 114423821150699590}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 222565605320610778}
   - component: {fileID: 114528420368665024}
   - component: {fileID: 95010327388029250}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: DialogBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 224499819734535342}
   - component: {fileID: 222109900087754494}
   - component: {fileID: 114794821926222664}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: penguinIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 223324784358668948}
   - component: {fileID: 114023968543057264}
   - component: {fileID: 114849221281052968}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 224004037428609132}
   - component: {fileID: 222161335373391244}
   - component: {fileID: 114105461572982464}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: TrashCanTransformIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 224250761820999542}
   - component: {fileID: 222320342372376304}
   - component: {fileID: 114329312772571070}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 224561479310499252}
   - component: {fileID: 222450589536183736}
   - component: {fileID: 114594381185125612}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224999931417214374}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Lives Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 224249492139603510}
   - component: {fileID: 222755646192811550}
   - component: {fileID: 114227043095480912}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 224868098841080500}
   - component: {fileID: 222054287049035908}
   - component: {fileID: 114554163198063958}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 224232838618037768}
   - component: {fileID: 222687466169209442}
   - component: {fileID: 114199770883069448}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 224978721536161558}
   - component: {fileID: 222684100113278928}
   - component: {fileID: 114603940369070616}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 224999372763077610}
   - component: {fileID: 222954476902867138}
   - component: {fileID: 114731309114866330}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 224990688980813758}
   - component: {fileID: 222412378640626030}
   - component: {fileID: 114515103264024206}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 224521176666533436}
   - component: {fileID: 222628561469918026}
   - component: {fileID: 114876603802950728}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: BaseTransformIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 224768130680253416}
   - component: {fileID: 222851251827246284}
   - component: {fileID: 114629133906003084}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Point Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 224147463375905020}
   - component: {fileID: 222821189217529726}
   - component: {fileID: 114991035133967218}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 224025216346512242}
   - component: {fileID: 222038533868209030}
   - component: {fileID: 114902268513266092}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: TrashCanTransformIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 224007247437395858}
   - component: {fileID: 222435158719578014}
   - component: {fileID: 114273135290927408}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +757,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071074904074180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.44, y: -0.05, z: 0}
+  m_LocalPosition: {x: -15.49, y: -0.33, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4022292174075862}
@@ -860,7 +860,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

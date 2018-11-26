@@ -6,13 +6,16 @@ public class BossScript : MonoBehaviour {
 
     public bool bossActive;
 
-    public float timeBetweenDrops;
+    private float fireCount;
 
-    private float dropCount;
+    public GameObject projectile;
+    Vector2 bulletPos;
+    public float fireRate = 2f;
+    float nextFire = 0.0f;
 
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start () {
+        bossActive = true;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +23,15 @@ public class BossScript : MonoBehaviour {
 
         if (bossActive)
         {
-
+            if(fireCount < 5)
+            {
+                if (Time.time > nextFire)
+                {
+                    nextFire = Time.time + fireRate;
+                    fire();
+                    fireCount++;
+                }
+            }
         }
 
 	}
@@ -33,4 +44,11 @@ public class BossScript : MonoBehaviour {
             bossActive = true;
         }
     }
+
+
+    void fire()
+    {
+        Instantiate(projectile, transform.position, Quaternion.identity);
+    }
+
 }
