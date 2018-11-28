@@ -9,6 +9,8 @@ public class BossScript : MonoBehaviour {
     private float fireCount;
 
     public GameObject projectile;
+    public GameObject potObject;
+
     Vector2 bulletPos;
     public float fireRate = 2f;
     float nextFire = 0.0f;
@@ -23,15 +25,22 @@ public class BossScript : MonoBehaviour {
 
         if (bossActive)
         {
-            if(fireCount < 5)
-            {
                 if (Time.time > nextFire)
                 {
-                    nextFire = Time.time + fireRate;
-                    fire();
-                    fireCount++;
-                }
-            }
+                    if (fireCount < 5)
+                    {
+                        nextFire = Time.time + fireRate;
+                        fire();
+                        fireCount++;
+                    }
+                    else
+                    {
+                        nextFire = Time.time + fireRate;
+                        firePot();
+                        fireCount++;
+                    }
+
+                }          
         }
 
 	}
@@ -49,6 +58,11 @@ public class BossScript : MonoBehaviour {
     void fire()
     {
         Instantiate(projectile, transform.position, Quaternion.identity);
+    }
+
+    void firePot()
+    {
+        Instantiate(potObject, transform.position, Quaternion.identity);
     }
 
 }
