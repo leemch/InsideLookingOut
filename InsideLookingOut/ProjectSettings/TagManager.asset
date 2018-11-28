@@ -9,6 +9,7 @@ TagManager:
   - movingPlatform
   - Boss
   - killGround
+  - cone
   layers:
   - Default
   - TransparentFX
