@@ -11,6 +11,11 @@ public class BossScript : MonoBehaviour {
     public GameObject projectile;
     public GameObject potObject;
 
+    public int potsToShoot = 3;
+    private int potCount = 0;
+
+
+
     Vector2 bulletPos;
     public float fireRate = 2f;
     float nextFire = 0.0f;
@@ -33,11 +38,12 @@ public class BossScript : MonoBehaviour {
                         fire();
                         fireCount++;
                     }
-                    else
+                    else if(potCount < potsToShoot)
                     {
                         nextFire = Time.time + fireRate;
                         firePot();
                         fireCount++;
+
                     }
 
                 }          
