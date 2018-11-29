@@ -68,7 +68,7 @@ public class BossScript : MonoBehaviour {
 
     void firePot()
     {
-        Instantiate(potObject, transform.position, Quaternion.identity);
+        potObject.GetComponent<Animator>().SetBool("triggered", true);
     }
 
 }
