@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01f43ef1ca925143bd02a94acd4ae59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagClosed: {fileID: 21300602, guid: 5453a30a7e623044eb680b30d62b50e7, type: 3}
-  flagOpen: {fileID: 21300594, guid: 5453a30a7e623044eb680b30d62b50e7, type: 3}
+  flagClosed: {fileID: 21300000, guid: 0b0a30d1eb70c5d49843bebc5858cda6, type: 3}
+  flagOpen: {fileID: 21300000, guid: 6386fd04394336a40bda45ad0c0c69db, type: 3}
   checkpointActive: 0
 --- !u!212 &212457776452420672
 SpriteRenderer:
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: -330587127
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300602, guid: 5453a30a7e623044eb680b30d62b50e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b0a30d1eb70c5d49843bebc5858cda6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
