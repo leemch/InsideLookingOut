@@ -10,7 +10,10 @@ public class boss2Controller : MonoBehaviour {
     public Transform leftPoint;
     public Transform rightPoint;
 
+    private Animator anim;
+
     private Rigidbody2D myRigidBody;
+    private SpriteRenderer sprRender;
 
     public GameObject deathParticle;
 
@@ -25,6 +28,8 @@ public class boss2Controller : MonoBehaviour {
         myRigidBody = GetComponent<Rigidbody2D>();
         lvlManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<PlayerController>();
+        sprRender = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         //player = lvlManager.player;
     }
 
@@ -37,26 +42,82 @@ public class boss2Controller : MonoBehaviour {
             player = FindObjectOfType<PlayerController>();
         }
 
-        if(lvlManager.currentForm != transformation.trashCan)
+        if (lvlManager.currentForm != transformation.trashCan)
         {
             if (player.transform.position.x > leftPoint.position.x && player.transform.position.x < rightPoint.position.x && lvlManager.isDead == false)
             {
-                if (transform.position.x - player.transform.position.x > 0f)
+                if (Mathf.Abs(transform.position.x - player.transform.position.x) > 0.5f)
                 {
-                    movingRight = false;
+                    state = 0;
                 }
                 else
                 {
-                    movingRight = true;
+                    state = 1;
                 }
             }
         }
-
-
-        switch (state)
+        else
         {
-            case 0:
-                    if (movingRight && transform.position.x >= rightPoint.position.x)
+            state = 2;
+        }
+
+        //anim.SetInteger("state", state);
+                switch (state)
+                {
+                case 0:
+
+                            if (transform.position.x - player.transform.position.x > 0.5f)
+                            {
+                                movingRight = false;
+                            }
+                            else
+                            {
+                                movingRight = true;
+                            }
+                break;
+
+            case 1:
+                myRigidBody.velocity = new Vector3(0f, myRigidBody.velocity.y, 0f);
+
+
+                break;
+
+
+            case 2:
+
+                patrol();
+
+                break;
+
+            case 3:
+                myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, 3f, 0f);
+                patrol();
+
+
+                break;
+    }
+
+
+            if (state != 1)
+            {
+                if (movingRight)
+                {
+                    myRigidBody.velocity = new Vector3(moveSpeed, myRigidBody.velocity.y, 0f);
+                    transform.localScale = new Vector3(.25f, .25f, .25f);
+                }
+                else
+                {
+                    myRigidBody.velocity = new Vector3(-moveSpeed, myRigidBody.velocity.y, 0f);
+                    transform.localScale = new Vector3(-.25f, .25f, .25f);
+                }
+            }
+
+
+    }
+
+    void patrol()
+    {
+        if (movingRight && transform.position.x >= rightPoint.position.x)
         {
             movingRight = false;
 
@@ -66,54 +127,7 @@ public class boss2Controller : MonoBehaviour {
             movingRight = true;
 
         }
-
-
-                break;
-
-
-            case 1:
-
-                if (!(transform.position.x >= rightPoint.position.x) && !(transform.position.x <= leftPoint.position.x)) {
-                    if (transform.position.x - player.transform.position.x > 0f)
-                    {
-                        movingRight = false;
-                    }
-                    else
-                    {
-                        movingRight = true;
-                    }
-                }
-                else
-                {
-                    state = 0;
-                }
-
-                break;
     }
-
-
-        if (movingRight)
-        {
-            myRigidBody.velocity = new Vector3(moveSpeed, myRigidBody.velocity.y, 0f);
-            transform.localScale = new Vector3(.25f, .25f, .25f);
-        }
-        else
-        {
-            myRigidBody.velocity = new Vector3(-moveSpeed, myRigidBody.velocity.y, 0f);
-            transform.localScale = new Vector3(-.25f, .25f, .25f);
-        }
-
-
-    }
-
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-        //if(other.tag == "KillPlane")
-        //{
-            //Destroy(gameObject);
-        //}
-
-    //}
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -135,7 +149,9 @@ public class boss2Controller : MonoBehaviour {
         if (other.gameObject.tag == "cone")
         {
             Instantiate(deathParticle, transform.position, transform.rotation);
-            Destroy(gameObject);
+            //state = 3;
+            //Destroy(gameObject);
+            sprRender.color = Color.red;
 
         }
     }
