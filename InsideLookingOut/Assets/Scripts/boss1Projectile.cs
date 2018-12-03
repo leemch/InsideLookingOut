@@ -11,7 +11,7 @@ public class boss1Projectile : MonoBehaviour {
     Rigidbody2D rb;
     PlayerController player;
 
-    public float arcHeight = 3;
+    public float arcHeight = 5f;
 
     Vector2 startPos;
     Vector2 targetPos;

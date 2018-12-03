@@ -21,5 +21,11 @@ public class fallingLightScript : MonoBehaviour {
         {
             anim.SetBool("cut", true);
         }
+
+        if (other.tag == "Boss")
+        {
+            Destroy(other);
+        }
+
     }
 }

@@ -25,7 +25,7 @@ public class BossScript : MonoBehaviour {
     void Start () {
         anim = GetComponent<Animator>();
 
-        bossActive = true;
+        bossActive = false;
 	}
 	
 	// Update is called once per frame
@@ -56,6 +56,12 @@ public class BossScript : MonoBehaviour {
         }
 
 	}
+
+    public void OnDestroy()
+    {
+        
+    }
+
 
 
     private void OnTriggerEnter2D(Collider2D other)
