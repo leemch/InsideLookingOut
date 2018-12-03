@@ -21,6 +21,14 @@ public class dialogueManager : MonoBehaviour {
         lvlManager = FindObjectOfType<LevelManager>();
 
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("return"))
+        {
+            DisplayNextSentence();
+        }
+    }
 	
 
     public void StartDialogue(dialogue dialogue)

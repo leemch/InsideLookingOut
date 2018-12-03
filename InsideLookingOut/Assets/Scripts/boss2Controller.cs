@@ -5,7 +5,11 @@ using UnityEngine;
 public class boss2Controller : MonoBehaviour {
 
     public float moveSpeed;
+    private float speedHolder;
     public bool movingRight;
+
+    public float madTime = 5f;
+    public float madSpeedMultiplier = 3f;
 
     public Transform leftPoint;
     public Transform rightPoint;
@@ -22,6 +26,9 @@ public class boss2Controller : MonoBehaviour {
     private LevelManager lvlManager;
 
     private int state = 0;
+
+    public int health = 3;
+
 
     // Use this for initialization
     void Start () {
@@ -42,26 +49,29 @@ public class boss2Controller : MonoBehaviour {
             player = FindObjectOfType<PlayerController>();
         }
 
-        if (lvlManager.currentForm != transformation.trashCan)
+        if (state != 3)
         {
-            if (player.transform.position.x > leftPoint.position.x && player.transform.position.x < rightPoint.position.x && lvlManager.isDead == false)
+            if (lvlManager.currentForm != transformation.trashCan)
             {
-                if (Mathf.Abs(transform.position.x - player.transform.position.x) > 0.5f)
+                if (player.transform.position.x > leftPoint.position.x && player.transform.position.x < rightPoint.position.x && lvlManager.isDead == false)
                 {
-                    state = 0;
-                }
-                else
-                {
-                    state = 1;
+                    if (Mathf.Abs(transform.position.x - player.transform.position.x) > 0.5f)
+                    {
+                        state = 0;
+                    }
+                    else
+                    {
+                        state = 1;
+                    }
                 }
             }
-        }
-        else
-        {
-            state = 2;
+            else
+            {
+                state = 2;
+            }
         }
 
-        //anim.SetInteger("state", state);
+ 
                 switch (state)
                 {
                 case 0:
@@ -90,8 +100,10 @@ public class boss2Controller : MonoBehaviour {
                 break;
 
             case 3:
-                myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, 3f, 0f);
+
+                
                 patrol();
+
 
 
                 break;
@@ -129,6 +141,21 @@ public class boss2Controller : MonoBehaviour {
         }
     }
 
+    public IEnumerator getMad()
+    {
+
+        state = 3;
+        speedHolder = moveSpeed;
+        moveSpeed *= madSpeedMultiplier;
+        sprRender.color = Color.red;
+
+        yield return new WaitForSeconds(madTime);
+        state = 1;
+        moveSpeed = speedHolder;
+        sprRender.color = Color.white;
+        yield return null;
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -148,10 +175,16 @@ public class boss2Controller : MonoBehaviour {
 
         if (other.gameObject.tag == "cone")
         {
+            health--;
             Instantiate(deathParticle, transform.position, transform.rotation);
-            //state = 3;
-            //Destroy(gameObject);
-            sprRender.color = Color.red;
+            StartCoroutine("getMad");
+
+            
+            if(health == 0)
+            {
+                Destroy(gameObject);
+            }
+
 
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class fallingConeScript : MonoBehaviour {
 
     private Rigidbody2D rb;
+    public GameObject startingPoint;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +23,23 @@ public class fallingConeScript : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             rb.bodyType = RigidbodyType2D.Dynamic ;
+            rb.freezeRotation = true;
+            rb.mass = 5;
             //Destroy(gameObject);
         }
+
+        if (other.gameObject.tag == "Boss" || other.gameObject.layer == LayerMask.NameToLayer("ground"))
+        {
+            //Destroy(gameObject);
+            reset();
+        }
+    }
+
+
+    void reset()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+        transform.position = startingPoint.transform.position;
     }
 
 }

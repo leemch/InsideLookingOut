@@ -4112,7 +4112,7 @@ Transform:
   - {fileID: 491297346}
   - {fileID: 45260983}
   m_Father: {fileID: 1140370753}
-  m_RootOrder: 44
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &457519809 stripped
 Transform:
@@ -6102,6 +6102,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114399637656129302, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4279619772515090, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
       propertyPath: m_LocalPosition.x
       value: -102.5
@@ -6151,6 +6156,26 @@ Prefab:
         type: 2}
       propertyPath: orthographic size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399637656129302, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399637656129302, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399637656129302, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399637656129302, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
@@ -9962,6 +9987,7 @@ Transform:
   - {fileID: 1534122067}
   - {fileID: 1084412744}
   - {fileID: 1049433557}
+  - {fileID: 457399691}
   - {fileID: 677876771}
   - {fileID: 1418468982}
   - {fileID: 895485388}
@@ -9980,7 +10006,6 @@ Transform:
   - {fileID: 746727310}
   - {fileID: 890121479}
   - {fileID: 255023849}
-  - {fileID: 457399691}
   - {fileID: 299945306}
   - {fileID: 235881125}
   - {fileID: 1331245219}

@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - killGround
   - cone
+  - playerFeet
   layers:
   - Default
   - TransparentFX

@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212483937605936494}
   - component: {fileID: 114000470506778232}
   - component: {fileID: 58159964109104288}
+  - component: {fileID: 114358591134713096}
+  - component: {fileID: 50223031014743476}
   m_Layer: 0
   m_Name: boss1Projectile
   m_TagString: Untagged
@@ -42,13 +44,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50223031014743476
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646782240539534}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58159964109104288
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1646782240539534}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -70,6 +92,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   arcHeight: 3
+--- !u!114 &114358591134713096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646782240539534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e1f19b16b0cc44d89438ea7ec2ca61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212483937605936494
 SpriteRenderer:
   m_ObjectHideFlags: 1

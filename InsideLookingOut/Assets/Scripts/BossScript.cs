@@ -14,6 +14,7 @@ public class BossScript : MonoBehaviour {
     public int potsToShoot = 3;
     private int potCount = 0;
 
+    private Animator anim;
 
 
     Vector2 bulletPos;
@@ -22,6 +23,8 @@ public class BossScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        anim = GetComponent<Animator>();
+
         bossActive = true;
 	}
 	
@@ -35,12 +38,15 @@ public class BossScript : MonoBehaviour {
                     if (fireCount < 5)
                     {
                         nextFire = Time.time + fireRate;
+                        anim.Play("frogVomit");
                         fire();
+                        anim.Play("frogVomit");
                         fireCount++;
                     }
                     else if(potCount < potsToShoot)
                     {
                         nextFire = Time.time + fireRate;
+                        //anim.Play("frogVomit");
                         firePot();
                         fireCount++;
 
@@ -63,11 +69,13 @@ public class BossScript : MonoBehaviour {
 
     void fire()
     {
+
         Instantiate(projectile, transform.position, Quaternion.identity);
     }
 
     void firePot()
     {
+
         potObject.GetComponent<Animator>().SetBool("triggered", true);
     }
 

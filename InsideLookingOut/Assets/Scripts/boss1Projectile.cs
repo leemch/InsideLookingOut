@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class boss1Projectile : MonoBehaviour {
 
+    private LevelManager lvlManager;
+
     public float moveSpeed = 3f;
 
     Rigidbody2D rb;
@@ -15,9 +17,11 @@ public class boss1Projectile : MonoBehaviour {
     Vector2 targetPos;
     Vector2 moveDirection;
 
+
+
 	// Use this for initialization
 	void Start () {
-
+        lvlManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<PlayerController>();
 
         startPos = transform.position;
@@ -30,6 +34,8 @@ public class boss1Projectile : MonoBehaviour {
 	void Update () {
         //rb.velocity = new Vector2(velX, velY);
         //Destroy(gameObject, 3f);
+
+
 
         float x0 = startPos.x;
         float x1 = targetPos.x;
@@ -44,7 +50,10 @@ public class boss1Projectile : MonoBehaviour {
         transform.position = nextPos;
 
         // Do something when we reach the target
-        //if (nextPos == targetPos) Arrived();
+        if (nextPos == targetPos)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -52,15 +61,15 @@ public class boss1Projectile : MonoBehaviour {
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
         Destroy(gameObject);
+
+        if (collision.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        //if (other.collider.gameObject.layer == LayerMask.NameToLayer("ground"))
-        //{
-            //Destroy(gameObject);
-        //}
-    }
+
 
 
 
