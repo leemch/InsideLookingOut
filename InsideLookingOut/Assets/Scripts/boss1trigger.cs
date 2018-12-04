@@ -20,6 +20,6 @@ public class boss1trigger : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
         boss.bossActive = true;
-
+        Destroy(gameObject);
     }
 }

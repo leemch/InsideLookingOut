@@ -225,17 +225,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.54, y: 13}
   m_EdgeRadius: 0
---- !u!114 &72931911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 72931904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f3208e1c585367419e2a38b85ee1f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &157454444
 Prefab:
   m_ObjectHideFlags: 0
@@ -482,7 +471,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4541749965020534, guid: d118710b69f4f7a41ad91f8f31625c96, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4541749965020534, guid: d118710b69f4f7a41ad91f8f31625c96, type: 2}
       propertyPath: m_LocalScale.x
@@ -910,7 +899,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4892400567858754, guid: fa49ecda0d1bbec43aa676afee7ee6ef, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114644227955769532, guid: fa49ecda0d1bbec43aa676afee7ee6ef, type: 2}
@@ -944,7 +933,7 @@ Transform:
   - {fileID: 14066696}
   - {fileID: 1881415141}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1051993026
 Prefab:
@@ -1256,7 +1245,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4379483695766694, guid: 161a609be3f29b848aa8538e4d83a834, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1351172247140722, guid: 161a609be3f29b848aa8538e4d83a834, type: 2}
       propertyPath: m_Name
@@ -1307,6 +1296,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379483695766694, guid: 161a609be3f29b848aa8538e4d83a834, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 161a609be3f29b848aa8538e4d83a834, type: 2}

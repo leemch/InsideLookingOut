@@ -16,6 +16,7 @@ public class BossScript : MonoBehaviour {
 
     private Animator anim;
 
+    private LevelManager lvlManager;
 
     Vector2 bulletPos;
     public float fireRate = 2f;
@@ -23,6 +24,7 @@ public class BossScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        lvlManager = FindObjectOfType<LevelManager>();
         anim = GetComponent<Animator>();
 
         bossActive = false;
@@ -80,11 +82,26 @@ public class BossScript : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "killBos")
+        if (other.gameObject.tag == "killBoss")
         {
-            Debug.Log("kill boss");
-            Destroy(gameObject);
+            //die();
+            //gameObject.SetActive(false);
         }
+        if (other.gameObject.tag == "Player")
+        {
+            if (bossActive)
+            {
+                lvlManager.respawn();
+            }
+        }
+    }
+
+
+    public void die()
+    {
+        Debug.Log("kill boss");
+        bossActive = false;
+        anim.Play("frogDie");
     }
 
 

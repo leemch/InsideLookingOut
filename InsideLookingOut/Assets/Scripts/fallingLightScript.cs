@@ -5,12 +5,13 @@ using UnityEngine;
 public class fallingLightScript : MonoBehaviour {
 
     private Animator anim;
-
     private BossScript boss;
+
 	// Use this for initialization
 	void Start () {
-        boss = FindObjectOfType<BossScript>();
+
         anim = GetComponent<Animator>();
+        boss = FindObjectOfType<BossScript>();
 	}
 	
 	// Update is called once per frame
@@ -23,23 +24,12 @@ public class fallingLightScript : MonoBehaviour {
         if (other.tag == "Player")
         {
             anim.SetBool("cut", true);
-            Destroy(boss);
+            if (boss.bossActive)
+            {
+                boss.die();
+            }
         }
-
-        //if (other.tag == "Boss")
-        //{
-        //    Debug.Log("kill boss");
-        //    Destroy(other.gameObject);
-        //}
 
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Boss")
-        {
-            Debug.Log("kill boss");
-            Destroy(other.gameObject);
-        }
-    }
 }
