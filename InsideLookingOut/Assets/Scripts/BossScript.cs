@@ -70,6 +70,12 @@ public class BossScript : MonoBehaviour {
         {
             bossActive = true;
         }
+
+        if (other.tag == "killBoss")
+        {
+            Debug.Log("kill boss");
+            Destroy(gameObject);
+        }
     }
 
 

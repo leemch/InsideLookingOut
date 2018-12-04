@@ -22,10 +22,20 @@ public class fallingLightScript : MonoBehaviour {
             anim.SetBool("cut", true);
         }
 
-        if (other.tag == "Boss")
-        {
-            Destroy(other);
-        }
+        //if (other.tag == "Boss")
+        //{
+        //    Debug.Log("kill boss");
+        //    Destroy(other.gameObject);
+        //}
 
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Boss")
+        {
+            Debug.Log("kill boss");
+            Destroy(other.gameObject);
+        }
     }
 }

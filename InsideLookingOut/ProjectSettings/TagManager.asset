@@ -11,6 +11,7 @@ TagManager:
   - killGround
   - cone
   - playerFeet
+  - killBoss
   layers:
   - Default
   - TransparentFX
