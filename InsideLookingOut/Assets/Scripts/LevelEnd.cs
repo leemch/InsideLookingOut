@@ -28,7 +28,7 @@ public class LevelEnd : MonoBehaviour {
             switch (levelToLoad)
             {
 
-                case "level3":
+                case "boss2":
                     if (lvlManager.hasLevel2Key)
                     {
                         SceneManager.LoadScene(levelToLoad);

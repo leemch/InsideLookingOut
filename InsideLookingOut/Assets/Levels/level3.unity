@@ -8567,7 +8567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e113187ca6dd8c4aa91857faac2df04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: endOfDemo
+  levelToLoad: boss3
 --- !u!1001 &928149025
 Prefab:
   m_ObjectHideFlags: 0
