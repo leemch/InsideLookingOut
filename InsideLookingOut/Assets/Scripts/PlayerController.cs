@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour {
 
     public bool canMove;
 
+    public AudioSource jumpSound;
+    public AudioSource hurtSound;
+
 
 
 
@@ -111,6 +114,7 @@ public class PlayerController : MonoBehaviour {
                     if (Input.GetButtonDown("Jump"))
                     {
                         myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+
                     }
 
                 }
@@ -119,6 +123,7 @@ public class PlayerController : MonoBehaviour {
                     if (Input.GetButtonDown("Jump") && isGrounded)
                     {
                         myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+                        jumpSound.Play();
                     }
                 }
 
