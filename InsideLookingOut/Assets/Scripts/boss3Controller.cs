@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boss2Controller : MonoBehaviour {
+public class boss3Controller : MonoBehaviour {
 
     public float moveSpeed;
     private float speedHolder;
@@ -51,24 +51,24 @@ public class boss2Controller : MonoBehaviour {
 
         if (state != 3)
         {
-            //if (lvlManager.currentForm != transformation.trashCan)
-            //{
+            if (lvlManager.currentForm != transformation.trashCan)
+            {
                 if (player.transform.position.x > leftPoint.position.x && player.transform.position.x < rightPoint.position.x && lvlManager.isDead == false)
                 {
-                    //if (Mathf.Abs(transform.position.x - player.transform.position.x) > 0.5f)
-                    //{
+                    if (Mathf.Abs(transform.position.x - player.transform.position.x) > 0.5f)
+                    {
                         state = 0;
-                    //}
-                    //else
-                    //{
-                    //    state = 1;
-                    //}
+                    }
+                    else
+                    {
+                        state = 1;
+                    }
                 }
-            //}
-            //else
-            //{
-            //    state = 2;
-            //}
+            }
+            else
+            {
+                state = 2;
+            }
         }
 
  
@@ -76,15 +76,14 @@ public class boss2Controller : MonoBehaviour {
                 {
                 case 0:
 
-                //if (transform.position.x - player.transform.position.x > 0.5f)
-                //{
-                //    movingRight = false;
-                //}
-                //else
-                //{
-                //    movingRight = true;
-                //}
-                patrol();
+                            if (transform.position.x - player.transform.position.x > 0.5f)
+                            {
+                                movingRight = false;
+                            }
+                            else
+                            {
+                                movingRight = true;
+                            }
                 break;
 
             case 1:
@@ -159,19 +158,19 @@ public class boss2Controller : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        //if (other.gameObject.tag == "Player")
-        //{
-            //if (player.isTransformed)
-            //{
-            //    Instantiate(deathParticle, transform.position, transform.rotation);
-            //    Destroy(gameObject);
-            //}
-            //else
-            //{
-            //    lvlManager.respawn();
-            //}
+        if (other.gameObject.tag == "Player")
+        {
+            if (player.isTransformed)
+            {
+                Instantiate(deathParticle, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+            else
+            {
+                lvlManager.respawn();
+            }
 
-        //}
+        }
 
 
         if (other.gameObject.tag == "cone")
