@@ -44,6 +44,9 @@ public class LevelManager : MonoBehaviour {
     public GameObject basePlayer;
     public GameObject penguinPlayer;
 
+    public GameObject gameOverScreen;
+
+
     public GameObject transformParticle;
 
     CameraController cam;
@@ -51,10 +54,22 @@ public class LevelManager : MonoBehaviour {
     public transformation currentForm;
     public string currentFormString;
 
+    public bool isPaused;
+
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<PlayerController>();
         cam = FindObjectOfType<CameraController>();
+
+        if (PlayerPrefs.HasKey("points"))
+        {
+            addCoins(PlayerPrefs.GetInt("points"));
+        }
+
+        if (PlayerPrefs.HasKey("lives"))
+        {
+            setLives(PlayerPrefs.GetInt("lives"));
+        }
 
         pointText.text = "Points: " + coins;
         battery = 100;
@@ -74,6 +89,8 @@ public class LevelManager : MonoBehaviour {
         hasKey = false;
         inDialog = false;
 
+        isPaused = false;
+
 
 
         //////developer mode
@@ -89,36 +106,38 @@ public class LevelManager : MonoBehaviour {
 
         if (!inDialog)
         {
-
-            if (Input.GetKeyDown("1"))
+            if (!isPaused)
             {
-
-                transformPlayer("base");
-            }
-
-            if (Input.GetKeyDown("2"))
-            {
-                if (battery > 0)
+                if (Input.GetKeyDown("1"))
                 {
-                    if (transformUnlocks[0] == true)
-                        transformPlayer("trash can");
+
+                    transformPlayer("base");
                 }
 
-            }
-            if (Input.GetKeyDown("3"))
-            {
-                if (transformUnlocks[1] == true)
-                    transformPlayer("mouse");
-            }
-            if (Input.GetKeyDown("4"))
-            {
-                if (transformUnlocks[2] == true)
-                    transformPlayer("penguin");
-            }
-            if (Input.GetKeyDown("5"))
-            {
-                //if (transformUnlocks[3] == true)
-                //    transformPlayer("lizard");
+                if (Input.GetKeyDown("2"))
+                {
+                    if (battery > 0)
+                    {
+                        if (transformUnlocks[0] == true)
+                            transformPlayer("trash can");
+                    }
+
+                }
+                if (Input.GetKeyDown("3"))
+                {
+                    if (transformUnlocks[1] == true)
+                        transformPlayer("mouse");
+                }
+                if (Input.GetKeyDown("4"))
+                {
+                    if (transformUnlocks[2] == true)
+                        transformPlayer("penguin");
+                }
+                if (Input.GetKeyDown("5"))
+                {
+                    //if (transformUnlocks[3] == true)
+                    //    transformPlayer("lizard");
+                }
             }
         }
 
@@ -136,7 +155,9 @@ public class LevelManager : MonoBehaviour {
         }
         else
         {
+            isDead = true;
             player.gameObject.SetActive(false);
+            gameOverScreen.SetActive(true);
         }
     }
 
@@ -167,6 +188,12 @@ public class LevelManager : MonoBehaviour {
     public void addLives(int amount)
     {
         currentLives += amount;
+        livesText.text = "Lives x" + currentLives;
+    }
+
+    public void setLives(int amount)
+    {
+        currentLives = amount;
         livesText.text = "Lives x" + currentLives;
     }
 

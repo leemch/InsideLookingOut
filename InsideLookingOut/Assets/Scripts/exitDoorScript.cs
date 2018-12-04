@@ -24,7 +24,7 @@ public class exitDoorScript : MonoBehaviour {
                 if (lvlManager.hasKey)
                 {
                     FindObjectOfType<dialogueManager>().StartDialogue(hasKeydialogue);
-                    SceneManager.LoadScene("boss1");
+
                 }
                 else
                 {

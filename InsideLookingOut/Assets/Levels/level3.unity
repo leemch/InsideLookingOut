@@ -6141,11 +6141,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4115640790881240, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.1
+      value: -10.2
       objectReference: {fileID: 0}
     - target: {fileID: 4115640790881240, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -20.54
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114415770030649598, guid: ef163195ca6468947b08c35aa0c612e9,
         type: 2}

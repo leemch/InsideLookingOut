@@ -932,6 +932,7 @@ MonoBehaviour:
   deathParticle: {fileID: 1847031952115904, guid: fa0dc97c5b0c7df46888e6274a01bc9d,
     type: 2}
   health: 3
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &1224466095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1031,7 +1032,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 20fcd57099c109d48b92657acd757072, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7264151, g: 0.48757878, b: 0.20901564, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

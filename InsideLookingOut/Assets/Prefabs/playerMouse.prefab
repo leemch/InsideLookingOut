@@ -265,6 +265,7 @@ MonoBehaviour:
   canTransform: 0
   isTransformed: 0
   trashcanSprite: {fileID: 21300000, guid: 51e8615f65613e84089a3adf1d95e8df, type: 3}
+  onPlatformSpeedModifier: 1
 --- !u!212 &212511163243803428
 SpriteRenderer:
   m_ObjectHideFlags: 1

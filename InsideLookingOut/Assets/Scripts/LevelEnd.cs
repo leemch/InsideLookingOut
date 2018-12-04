@@ -25,8 +25,20 @@ public class LevelEnd : MonoBehaviour {
         if(other.tag == "Player")
         {
 
+            PlayerPrefs.SetInt("points", lvlManager.coins);
+            PlayerPrefs.SetInt("lives", lvlManager.currentLives);
+
             switch (levelToLoad)
             {
+
+                case "boss1":
+                    if (lvlManager.hasKey)
+                    {
+                        SceneManager.LoadScene(levelToLoad);
+                    }
+                    break;
+
+
 
                 case "boss2":
                     if (lvlManager.hasLevel2Key)
@@ -34,6 +46,8 @@ public class LevelEnd : MonoBehaviour {
                         SceneManager.LoadScene(levelToLoad);
                     }
                     break;
+
+
 
                 default:
                     SceneManager.LoadScene(levelToLoad);

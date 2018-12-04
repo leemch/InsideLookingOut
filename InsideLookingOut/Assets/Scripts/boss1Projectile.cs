@@ -60,7 +60,7 @@ public class boss1Projectile : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("ground"))
-        Destroy(gameObject);
+        //Destroy(gameObject);
 
         if (collision.tag == "Player")
         {

@@ -29,6 +29,8 @@ public class boss2Controller : MonoBehaviour {
 
     public int health = 3;
 
+    public Color color;
+
 
     // Use this for initialization
     void Start () {
@@ -38,6 +40,7 @@ public class boss2Controller : MonoBehaviour {
         sprRender = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         //player = lvlManager.player;
+        color = sprRender.color;
     }
 
     // Update is called once per frame
@@ -153,7 +156,7 @@ public class boss2Controller : MonoBehaviour {
         yield return new WaitForSeconds(madTime);
         state = 1;
         moveSpeed = speedHolder;
-        sprRender.color = Color.white;
+        sprRender.color = color;
         yield return null;
     }
 

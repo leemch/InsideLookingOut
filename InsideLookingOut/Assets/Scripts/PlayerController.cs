@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 
 
     public float moveSpeed;
+    private float activeMoveSpeed;
     private Rigidbody2D myRigidbody;
     public GameObject transformParticle;
     public float jumpSpeed;
@@ -32,6 +33,11 @@ public class PlayerController : MonoBehaviour {
 
     private Transform[] children = null;
 
+    private bool onPlatform;
+    public float onPlatformSpeedModifier = 1f;
+
+    public bool canMove;
+
 
 
 
@@ -46,6 +52,9 @@ public class PlayerController : MonoBehaviour {
 
         sprRender = GetComponent<SpriteRenderer>();
 
+        activeMoveSpeed = moveSpeed;
+        canMove = true;
+
     }
 	
 	// Update is called once per frame
@@ -59,59 +68,73 @@ public class PlayerController : MonoBehaviour {
         {
 
 
-            if (Input.GetAxisRaw("Horizontal") > 0f)
-            {
-
-                myRigidbody.velocity = new Vector3(moveSpeed, myRigidbody.velocity.y, 0f);
-                //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                if (transform.localScale.x < 0)
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-
-            }
-            else if (Input.GetAxisRaw("Horizontal") < 0f)
-            {
-
-                myRigidbody.velocity = new Vector3(-moveSpeed, myRigidbody.velocity.y, 0f);
-                if (transform.localScale.x > 0)
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                if (onPlatform)
+                {
+                    activeMoveSpeed = moveSpeed; // * onPlatformSpeedModifier;
+                }
                 else
-                    transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
-
-            }
-            else
-            {
-                myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
-            }
-
-
-            if (lvlManager.currentForm == transformation.penguin)
-            {
-                if (Input.GetButtonDown("Jump"))
                 {
-                    myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+                    activeMoveSpeed = moveSpeed;
+                }
+
+            if (!lvlManager.isPaused)
+            {
+
+                if (Input.GetAxisRaw("Horizontal") > 0f)
+                {
+
+                    myRigidbody.velocity = new Vector3(activeMoveSpeed, myRigidbody.velocity.y, 0f);
+                    //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    if (transform.localScale.x < 0)
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
+                }
+                else if (Input.GetAxisRaw("Horizontal") < 0f)
+                {
+
+                    myRigidbody.velocity = new Vector3(-activeMoveSpeed, myRigidbody.velocity.y, 0f);
+                    if (transform.localScale.x > 0)
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    else
+                        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
+                }
+                else
+                {
+                    myRigidbody.velocity = new Vector3(0f, myRigidbody.velocity.y, 0f);
+                }
+
+
+
+                if (lvlManager.currentForm == transformation.penguin)
+                {
+                    if (Input.GetButtonDown("Jump"))
+                    {
+                        myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+                    }
+
+                }
+                else
+                {
+                    if (Input.GetButtonDown("Jump") && isGrounded)
+                    {
+                        myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+                    }
                 }
 
             }
-            else
-            {
-                if (Input.GetButtonDown("Jump") && isGrounded)
-                {
-                    myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
-                }
+
+                myAnim.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
+                myAnim.SetBool("Grounded", isGrounded);
+
             }
-
-
-
-            myAnim.SetFloat("Speed", Mathf.Abs(myRigidbody.velocity.x));
-            myAnim.SetBool("Grounded", isGrounded);
-
-        }
-
+        
 
         else
         {
             myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, 0f);
         }
+        
 
     }
 
@@ -143,6 +166,7 @@ public class PlayerController : MonoBehaviour {
         if(other.gameObject.tag == "movingPlatform")
         {
             transform.parent = other.transform;
+            onPlatform = true;
         }
     }
 
@@ -152,6 +176,7 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "movingPlatform")
         {
             transform.parent = null;
+            onPlatform = false;
         }
     }
 
