@@ -255,19 +255,19 @@ public class LevelManager : MonoBehaviour {
                 case "trash can":
                     Instantiate(trashCanPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.trashCan;
-                    addBattery(-1);
+                    addBattery(-5);
                     break;
 
                 case "mouse":
                     Instantiate(mousePlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.mouse;
-                    addBattery(-1);
+                    addBattery(-5);
                     break;
 
                 case "penguin":
                     Instantiate(penguinPlayer, player.gameObject.transform.position, player.gameObject.transform.rotation);
                     currentForm = transformation.penguin;
-                    addBattery(-1);
+                    addBattery(-10);
                     break;
             }
 

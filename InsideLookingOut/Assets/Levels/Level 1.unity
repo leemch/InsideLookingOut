@@ -1220,6 +1220,21 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -0.21
       objectReference: {fileID: 0}
+    - target: {fileID: 114517349029014020, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: startingLives
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114672981688768450, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: followAhead
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114672981688768450, guid: ef163195ca6468947b08c35aa0c612e9,
+        type: 2}
+      propertyPath: smoothing
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef163195ca6468947b08c35aa0c612e9, type: 2}
   m_IsPrefabAsset: 0
