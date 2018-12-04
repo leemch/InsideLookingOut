@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 1032856494}
   m_Layer: 0
   m_Name: lightHolder
-  m_TagString: Untagged
+  m_TagString: killBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1302,6 +1302,11 @@ Prefab:
         type: 2}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 17.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 61197119718777948, guid: 161a609be3f29b848aa8538e4d83a834,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 161a609be3f29b848aa8538e4d83a834, type: 2}

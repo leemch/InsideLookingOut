@@ -5,8 +5,11 @@ using UnityEngine;
 public class fallingLightScript : MonoBehaviour {
 
     private Animator anim;
+
+    private BossScript boss;
 	// Use this for initialization
 	void Start () {
+        boss = FindObjectOfType<BossScript>();
         anim = GetComponent<Animator>();
 	}
 	
@@ -20,6 +23,7 @@ public class fallingLightScript : MonoBehaviour {
         if (other.tag == "Player")
         {
             anim.SetBool("cut", true);
+            Destroy(boss);
         }
 
         //if (other.tag == "Boss")

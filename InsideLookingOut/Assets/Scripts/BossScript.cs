@@ -57,21 +57,30 @@ public class BossScript : MonoBehaviour {
 
 	}
 
-    public void OnDestroy()
+    /*public void OnDestroy()
     {
         
     }
+    */
 
 
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //   if(other.tag == "Player")
+     //   {
+     //       bossActive = true;
+     //   }
 
-    private void OnTriggerEnter2D(Collider2D other)
+     //   if (other.tag == "killBoss")
+     //   {
+     //       Debug.Log("kill boss");
+     //       Destroy(gameObject);
+     //   }
+    //}
+
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.tag == "Player")
-        {
-            bossActive = true;
-        }
-
-        if (other.tag == "killBoss")
+        if (other.gameObject.tag == "killBos")
         {
             Debug.Log("kill boss");
             Destroy(gameObject);
