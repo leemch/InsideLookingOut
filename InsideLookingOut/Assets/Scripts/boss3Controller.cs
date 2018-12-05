@@ -49,47 +49,34 @@ public class boss3Controller : MonoBehaviour {
             player = FindObjectOfType<PlayerController>();
         }
 
-        if (state != 3)
-        {
-            if (lvlManager.currentForm != transformation.trashCan)
-            {
-                if (player.transform.position.x > leftPoint.position.x && player.transform.position.x < rightPoint.position.x && lvlManager.isDead == false)
-                {
-                    if (Mathf.Abs(transform.position.x - player.transform.position.x) > 0.5f)
-                    {
-                        state = 0;
-                    }
-                    else
-                    {
-                        state = 1;
-                    }
-                }
-            }
-            else
-            {
-                state = 2;
-            }
-        }
+
+
+                state = 1;
+
 
  
                 switch (state)
                 {
                 case 0:
 
-                            if (transform.position.x - player.transform.position.x > 0.5f)
-                            {
-                                movingRight = false;
-                            }
-                            else
-                            {
-                                movingRight = true;
-                            }
+                myRigidBody.velocity = new Vector3(0f, myRigidBody.velocity.y, 0f);
+
                 break;
 
             case 1:
-                myRigidBody.velocity = new Vector3(0f, myRigidBody.velocity.y, 0f);
 
 
+                /*if (transform.position.x - player.transform.position.x > 0.5f)
+                {
+                    movingRight = false;
+                }
+                else
+                {
+                    movingRight = true;
+                }
+                */
+                anim.SetInteger("state", 1);
+                patrol();
                 break;
 
 
@@ -110,17 +97,17 @@ public class boss3Controller : MonoBehaviour {
     }
 
 
-            if (state != 1)
+            if (state != 0)
             {
                 if (movingRight)
                 {
                     myRigidBody.velocity = new Vector3(moveSpeed, myRigidBody.velocity.y, 0f);
-                    transform.localScale = new Vector3(.25f, .25f, .25f);
+                    transform.localScale = new Vector3(.27f, .27f, .27f);
                 }
                 else
                 {
                     myRigidBody.velocity = new Vector3(-moveSpeed, myRigidBody.velocity.y, 0f);
-                    transform.localScale = new Vector3(-.25f, .25f, .25f);
+                    transform.localScale = new Vector3(-.27f, .27f, .27f);
                 }
             }
 
@@ -141,20 +128,6 @@ public class boss3Controller : MonoBehaviour {
         }
     }
 
-    public IEnumerator getMad()
-    {
-
-        state = 3;
-        speedHolder = moveSpeed;
-        moveSpeed *= madSpeedMultiplier;
-        sprRender.color = Color.red;
-
-        yield return new WaitForSeconds(madTime);
-        state = 1;
-        moveSpeed = speedHolder;
-        sprRender.color = Color.white;
-        yield return null;
-    }
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -167,7 +140,7 @@ public class boss3Controller : MonoBehaviour {
         }
 
 
-        if (other.gameObject.tag == "cone")
+        if (other.gameObject.tag == "bossSpike")
         {
             health--;
             Instantiate(deathParticle, transform.position, transform.rotation);
