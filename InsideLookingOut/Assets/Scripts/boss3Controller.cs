@@ -11,6 +11,10 @@ public class boss3Controller : MonoBehaviour {
     public float madTime = 5f;
     public float madSpeedMultiplier = 3f;
 
+
+    public Transform defaultPoint;
+    public Transform endPoint;
+    public Transform currentTargetPoint;
     public Transform leftPoint;
     public Transform rightPoint;
 
@@ -25,9 +29,13 @@ public class boss3Controller : MonoBehaviour {
 
     private LevelManager lvlManager;
 
-    private int state = 0;
+    public int state = 0;
 
     public int health = 3;
+
+    public bool isAttacking;
+
+    public GameObject water;
 
 
     // Use this for initialization
@@ -37,6 +45,8 @@ public class boss3Controller : MonoBehaviour {
         player = FindObjectOfType<PlayerController>();
         sprRender = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        currentTargetPoint = endPoint;
+        isAttacking = false;
         //player = lvlManager.player;
     }
 
@@ -44,60 +54,67 @@ public class boss3Controller : MonoBehaviour {
     void Update() {
 
 
-        if(player == null)
+
+
+
+
+        if (player == null)
         {
             player = FindObjectOfType<PlayerController>();
         }
 
 
 
-                state = 1;
+        anim.SetInteger("state", state);
 
 
- 
-                switch (state)
+
+        switch (state)
                 {
+
                 case 0:
-
-                myRigidBody.velocity = new Vector3(0f, myRigidBody.velocity.y, 0f);
-
+                //idle
+                anim.Play("sharkIdle");
                 break;
 
             case 1:
+                //charging
+
+                anim.Play("sharkRun");
 
 
-                /*if (transform.position.x - player.transform.position.x > 0.5f)
+                
+                // Compute the next position -- straight flight
+                Vector3 nextPos = Vector3.MoveTowards(transform.position, currentTargetPoint.transform.position, moveSpeed * Time.deltaTime);
+
+                transform.position = nextPos;
+
+                //Arrived at default point
+                if (nextPos == defaultPoint.transform.position)
                 {
-                    movingRight = false;
+                    moveToEnd();
+                    transform.localScale = new Vector3(.5f, .5f, .5f);
+                    state = 0 ;  
                 }
-                else
+
+                // reach the spikes; damage boss
+                if (nextPos == endPoint.transform.position)
                 {
-                    movingRight = true;
+                    moveToDefault();
+                    
                 }
-                */
-                anim.SetInteger("state", 1);
-                patrol();
                 break;
 
 
             case 2:
-
-                patrol();
-
+                //going back to start
                 break;
 
-            case 3:
 
-                
-                patrol();
-
-
-
-                break;
     }
 
 
-            if (state != 0)
+            /*if (state != 0)
             {
                 if (movingRight)
                 {
@@ -110,7 +127,7 @@ public class boss3Controller : MonoBehaviour {
                     transform.localScale = new Vector3(-.27f, .27f, .27f);
                 }
             }
-
+            */
 
     }
 
@@ -128,15 +145,25 @@ public class boss3Controller : MonoBehaviour {
         }
     }
 
+    void moveToDefault()
+    {
+        currentTargetPoint = defaultPoint;
+        transform.localScale = new Vector3(-.5f, .5f, .5f);
+    }
+
+    void moveToEnd()
+    {
+        currentTargetPoint = endPoint;
+        transform.localScale = new Vector3(.5f, .5f, .5f);
+    }
+
 
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-
-                lvlManager.respawn();
-
-
+            moveToDefault();
+            lvlManager.respawn();
         }
 
 
