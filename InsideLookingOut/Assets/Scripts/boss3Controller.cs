@@ -160,15 +160,9 @@ public class boss3Controller : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            if (player.isTransformed)
-            {
-                Instantiate(deathParticle, transform.position, transform.rotation);
-                Destroy(gameObject);
-            }
-            else
-            {
+
                 lvlManager.respawn();
-            }
+
 
         }
 
@@ -177,15 +171,44 @@ public class boss3Controller : MonoBehaviour {
         {
             health--;
             Instantiate(deathParticle, transform.position, transform.rotation);
-            StartCoroutine("getMad");
 
             
             if(health == 0)
             {
                 Destroy(gameObject);
             }
-
-
         }
+    }
+
+
+    public IEnumerator beamAttack()
+    {
+ 
+
+        yield return new WaitForSeconds(3f);
+
+
+        yield return null;
+    }
+
+
+    public IEnumerator chargeAttack()
+    {
+
+
+        yield return new WaitForSeconds(3f);
+
+
+        yield return null;
+    }
+
+    public IEnumerator laserAttack()
+    {
+
+
+        yield return new WaitForSeconds(3f);
+
+
+        yield return null;
     }
 }
