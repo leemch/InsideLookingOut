@@ -186,6 +186,7 @@ public class boss2Controller : MonoBehaviour {
             
             if(health == 0)
             {
+                lvlManager.boss2Dead = true;
                 Destroy(gameObject);
             }
 

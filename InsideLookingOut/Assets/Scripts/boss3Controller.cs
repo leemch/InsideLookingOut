@@ -154,7 +154,7 @@ public class boss3Controller : MonoBehaviour {
 
         yield return new WaitForSeconds(12f);
 
-
+        water.GetComponent<waterHurtPlayer>().killedPlayer = false;
         state = 0;
         isCasting = false;
         attackStage++;
@@ -180,8 +180,15 @@ public class boss3Controller : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            moveToDefault();
-            lvlManager.respawn();
+            
+
+            if (lvlManager.currentForm != transformation.trashCan)
+            {
+                lvlManager.respawn();
+                moveToDefault();
+            }
+                
+
         }
 
 
@@ -204,6 +211,11 @@ public class boss3Controller : MonoBehaviour {
     {
         isCasting = true;
         sprRender.color = Color.red;
+        health--;
+        if (health == 0)
+        {
+            Destroy(gameObject);
+        }
 
         yield return new WaitForSeconds(3f);
 

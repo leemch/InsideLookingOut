@@ -55,6 +55,8 @@ public class LevelManager : MonoBehaviour {
     public string currentFormString;
 
     public bool isPaused;
+    public bool boss2Dead;
+
 
     // Use this for initialization
     void Start () {
@@ -70,6 +72,7 @@ public class LevelManager : MonoBehaviour {
         {
             setLives(PlayerPrefs.GetInt("lives"));
         }
+
 
         pointText.text = "Points: " + coins;
         battery = 100;
@@ -91,7 +94,7 @@ public class LevelManager : MonoBehaviour {
 
         isPaused = false;
 
-
+        boss2Dead = false;
 
         //////developer mode
         //unlockTransform("trash can");

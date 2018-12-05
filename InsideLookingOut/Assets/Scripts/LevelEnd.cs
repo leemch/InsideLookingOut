@@ -47,6 +47,13 @@ public class LevelEnd : MonoBehaviour {
                     }
                     break;
 
+                case "level3":
+                    if (lvlManager.boss2Dead)
+                    {
+                        SceneManager.LoadScene(levelToLoad);
+                    }
+                    break;
+
 
 
                 default:
