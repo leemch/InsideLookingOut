@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour {
 
     public GameObject deathParticle;
 
+    public AudioSource coinSound;
+
     public int coins;
     public int battery;
 
@@ -57,6 +59,8 @@ public class LevelManager : MonoBehaviour {
     public bool isPaused;
     public bool boss2Dead;
 
+    
+
 
     // Use this for initialization
     void Start () {
@@ -72,6 +76,7 @@ public class LevelManager : MonoBehaviour {
         {
             setLives(PlayerPrefs.GetInt("lives"));
         }
+
 
 
         pointText.text = "Points: " + coins;
@@ -186,6 +191,7 @@ public class LevelManager : MonoBehaviour {
     {
         coins += amount;
         pointText.text = "Points: " + coins;
+        coinSound.Play();
     }
 
     public void addLives(int amount)
