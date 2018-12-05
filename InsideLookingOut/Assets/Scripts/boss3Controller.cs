@@ -33,7 +33,7 @@ public class boss3Controller : MonoBehaviour {
 
     public int health = 3;
 
-    public bool isAttacking;
+    public bool isCasting;
 
     public GameObject water;
 
@@ -46,8 +46,10 @@ public class boss3Controller : MonoBehaviour {
         sprRender = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         currentTargetPoint = endPoint;
-        isAttacking = false;
+        isCasting = false;
         //player = lvlManager.player;
+
+        state = 1;
     }
 
     // Update is called once per frame
@@ -94,7 +96,8 @@ public class boss3Controller : MonoBehaviour {
                 {
                     moveToEnd();
                     transform.localScale = new Vector3(.5f, .5f, .5f);
-                    state = 0 ;  
+                    state = 0 ;
+                    state = 2;
                 }
 
                 // reach the spikes; damage boss
@@ -107,43 +110,27 @@ public class boss3Controller : MonoBehaviour {
 
 
             case 2:
-                //going back to start
+                if (!isCasting)
+                {
+                    StartCoroutine("castWaterAttack");
+                }
+                break;
+
+            case 3:
+
+                break;
+
+            case 4:
+
                 break;
 
 
-    }
 
-
-            /*if (state != 0)
-            {
-                if (movingRight)
-                {
-                    myRigidBody.velocity = new Vector3(moveSpeed, myRigidBody.velocity.y, 0f);
-                    transform.localScale = new Vector3(.27f, .27f, .27f);
-                }
-                else
-                {
-                    myRigidBody.velocity = new Vector3(-moveSpeed, myRigidBody.velocity.y, 0f);
-                    transform.localScale = new Vector3(-.27f, .27f, .27f);
-                }
-            }
-            */
-
-    }
-
-    void patrol()
-    {
-        if (movingRight && transform.position.x >= rightPoint.position.x)
-        {
-            movingRight = false;
 
         }
-        if (!movingRight && transform.position.x <= leftPoint.position.x)
-        {
-            movingRight = true;
 
-        }
     }
+
 
     void moveToDefault()
     {
@@ -181,34 +168,40 @@ public class boss3Controller : MonoBehaviour {
     }
 
 
-    public IEnumerator beamAttack()
+
+    public IEnumerator castWaterAttack()
     {
- 
+        isCasting = true;
+        anim.Play("sharkWave");
 
-        yield return new WaitForSeconds(3f);
+                water.GetComponent<Animator>().Play("waterAnim");
 
+        yield return new WaitForSeconds(12f);
+
+
+        state = 0;
+        isCasting = false;
 
         yield return null;
     }
 
 
-    public IEnumerator chargeAttack()
+    public IEnumerator castBeamAttack()
     {
+        isCasting = true;
+        anim.Play("sharkWave");
+
+    
+        //water.GetComponent<Animator>().Play("waterAnim");
+
+        yield return new WaitForSeconds(12f);
 
 
-        yield return new WaitForSeconds(3f);
-
+        state = 0;
+        isCasting = false;
 
         yield return null;
     }
 
-    public IEnumerator laserAttack()
-    {
 
-
-        yield return new WaitForSeconds(3f);
-
-
-        yield return null;
-    }
 }
