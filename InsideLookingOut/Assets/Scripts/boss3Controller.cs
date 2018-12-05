@@ -45,6 +45,8 @@ public class boss3Controller : MonoBehaviour {
     public AudioSource waterRiseSound;
     public AudioSource beamSound;
 
+    public GameObject finalDoor;
+
 
     // Use this for initialization
     void Start () {
@@ -222,8 +224,10 @@ public class boss3Controller : MonoBehaviour {
         health--;
         if (health == 0)
         {
-            SceneManager.LoadScene("endOfDemo");
-            //Destroy(gameObject);
+            //SceneManager.LoadScene("endOfDemo");
+            finalDoor.SetActive(true);
+            Instantiate(deathParticle, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
         yield return new WaitForSeconds(3f);
