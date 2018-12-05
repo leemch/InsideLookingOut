@@ -17,8 +17,14 @@ public class LevelManager : MonoBehaviour {
     public GameObject deathParticle;
 
     public AudioSource coinSound;
+    public AudioSource BatterySound;
+    public AudioSource foundTransformSound;
+    public AudioSource jumpSound;
+    public AudioSource penguinFlapSound;
+    public AudioSource talkSound;
 
     public int coins;
+    private int coinBonusLifeCount;
     public int battery;
 
     public bool hasCigs;
@@ -69,7 +75,7 @@ public class LevelManager : MonoBehaviour {
 
         if (PlayerPrefs.HasKey("points"))
         {
-            addCoins(PlayerPrefs.GetInt("points"));
+            setCoins(PlayerPrefs.GetInt("points"));
         }
 
         if (PlayerPrefs.HasKey("lives"))
@@ -146,6 +152,21 @@ public class LevelManager : MonoBehaviour {
                     //if (transformUnlocks[3] == true)
                     //    transformPlayer("lizard");
                 }
+
+
+                if(coinBonusLifeCount >= 20)
+                {
+                    addLives(1);
+                    coinBonusLifeCount = 0;
+                }
+
+
+                if (Input.GetKeyDown("0"))
+                {
+
+                    player.transform.position = respawnPoint;
+                    setBattery(100);
+                }
             }
         }
 
@@ -156,6 +177,8 @@ public class LevelManager : MonoBehaviour {
         currentLives -= 1;
         livesText.text = "Lives x" + currentLives;
         setBattery(100);
+        setCoins(0);
+        coinBonusLifeCount = 0;
 
         if (currentLives > 0)
         {
@@ -190,14 +213,22 @@ public class LevelManager : MonoBehaviour {
     public void addCoins(int amount)
     {
         coins += amount;
+        coinBonusLifeCount += amount;
         pointText.text = "Points: " + coins;
         coinSound.Play();
+    }
+
+    public void setCoins(int amount)
+    {
+        coins = amount;
+        pointText.text = "Points: " + coins;
     }
 
     public void addLives(int amount)
     {
         currentLives += amount;
         livesText.text = "Lives x" + currentLives;
+        coinSound.Play();
     }
 
     public void setLives(int amount)
@@ -216,6 +247,12 @@ public class LevelManager : MonoBehaviour {
             battery = 0;
 
         batteryText.text = "Battery: " + battery + "%";
+
+        if(amount > 0)
+        {
+            BatterySound.Play();
+        }
+        
     }
 
     public void setBattery(int amount)
@@ -227,6 +264,7 @@ public class LevelManager : MonoBehaviour {
 
     public void unlockTransform(string type)
     {
+        foundTransformSound.Play();
         switch (type)
         {
             case "trash can":

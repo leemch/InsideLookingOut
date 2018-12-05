@@ -25,11 +25,13 @@ public class npc1Script : MonoBehaviour {
                 if (lvlManager.hasCigs)
                 {
                     lvlManager.hasKey = true;
+                    lvlManager.talkSound.Play();
                     FindObjectOfType<dialogueManager>().StartDialogue(hasCigsdialogue);
                     gaveCigs = true;
                 }
                 else
                 {
+                    
                     FindObjectOfType<dialogueManager>().StartDialogue(startDialog);
                 }
             }

@@ -22,6 +22,8 @@ public class BossScript : MonoBehaviour {
     public float fireRate = 2f;
     float nextFire = 0.0f;
 
+    public AudioSource vomitSound;
+
     // Use this for initialization
     void Start () {
         lvlManager = FindObjectOfType<LevelManager>();
@@ -42,8 +44,9 @@ public class BossScript : MonoBehaviour {
                         nextFire = Time.time + fireRate;
                         anim.Play("frogVomit");
                         fire();
-                        anim.Play("frogVomit");
+                        //anim.Play("frogVomit");
                         fireCount++;
+                        vomitSound.Play();
                     }
                     else if(potCount < potsToShoot)
                     {

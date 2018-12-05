@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class boss3Controller : MonoBehaviour {
 
@@ -39,6 +40,10 @@ public class boss3Controller : MonoBehaviour {
     public GameObject beam;
 
     public int attackStage = 1;
+
+    public AudioSource hurtSound;
+    public AudioSource waterRiseSound;
+    public AudioSource beamSound;
 
 
     // Use this for initialization
@@ -147,6 +152,7 @@ public class boss3Controller : MonoBehaviour {
 
     public IEnumerator castWaterAttack()
     {
+        waterRiseSound.Play();
         isCasting = true;
         anim.Play("sharkWave");
 
@@ -158,6 +164,7 @@ public class boss3Controller : MonoBehaviour {
         state = 0;
         isCasting = false;
         attackStage++;
+        waterRiseSound.Stop();
 
         yield return null;
     }
@@ -209,12 +216,14 @@ public class boss3Controller : MonoBehaviour {
 
     public IEnumerator hurtBoss()
     {
+        hurtSound.Play();
         isCasting = true;
         sprRender.color = Color.red;
         health--;
         if (health == 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("endOfDemo");
+            //Destroy(gameObject);
         }
 
         yield return new WaitForSeconds(3f);
@@ -229,6 +238,7 @@ public class boss3Controller : MonoBehaviour {
 
     public IEnumerator castBeamAttack()
     {
+        beamSound.Play();
         isCasting = true;
         anim.Play("sharkWave");
 

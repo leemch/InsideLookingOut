@@ -31,6 +31,8 @@ public class boss2Controller : MonoBehaviour {
 
     public Color color;
 
+    public AudioSource madSound;
+
 
     // Use this for initialization
     void Start () {
@@ -147,8 +149,8 @@ public class boss2Controller : MonoBehaviour {
 
     public IEnumerator getMad()
     {
-
         state = 3;
+        madSound.Play();
         speedHolder = moveSpeed;
         moveSpeed *= madSpeedMultiplier;
         sprRender.color = Color.red;

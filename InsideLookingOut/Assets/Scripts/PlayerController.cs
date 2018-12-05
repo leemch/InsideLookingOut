@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 
     public bool canMove;
 
-    public AudioSource jumpSound;
+
     public AudioSource hurtSound;
 
 
@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour {
                     if (Input.GetButtonDown("Jump"))
                     {
                         myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
+                        lvlManager.penguinFlapSound.Play();
 
                     }
 
@@ -123,7 +124,12 @@ public class PlayerController : MonoBehaviour {
                     if (Input.GetButtonDown("Jump") && isGrounded)
                     {
                         myRigidbody.velocity = new Vector3(myRigidbody.velocity.x, jumpSpeed, 0f);
-                        jumpSound.Play();
+
+                        if(lvlManager.currentForm != transformation.trashCan)
+                        {
+                            lvlManager.jumpSound.Play();
+                        }
+                        
                     }
                 }
 

@@ -25,6 +25,7 @@ public class npc2Script : MonoBehaviour {
             {
                 if (lvlManager.hasSandwich)
                 {
+                    lvlManager.talkSound.Play();
                     lvlManager.addLives(3);
                     FindObjectOfType<dialogueManager>().StartDialogue(hasSandwichDialog);
                     gaveSandwich = true;
@@ -35,6 +36,7 @@ public class npc2Script : MonoBehaviour {
                     {
                         hasTalked = true;
                         FindObjectOfType<dialogueManager>().StartDialogue(startDialog);
+                        
                     }
                 }
             }
